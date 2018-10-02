@@ -50,7 +50,7 @@ void HungryState::OnUpdate()
 {
 	if (isFull->IsValid())
 	{
-
+		isFull->GetNextState();
 	}
 	else if (isDead->IsValid())
 	{

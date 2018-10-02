@@ -41,8 +41,8 @@ void Game::Run()
 		EvaluateUserInput(GetUserInput(UserInput));
 		
 		CritterPet->IncreaseHunger();
-
 		CritterPet->GetStateMachine()->Update();
+		CritterPet->Talk();
 	}
 }
 

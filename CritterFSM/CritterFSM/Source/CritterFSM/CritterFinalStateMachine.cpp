@@ -18,7 +18,10 @@ CritterFinalStateMachine::~CritterFinalStateMachine()
 
 void CritterFinalStateMachine::Update()
 {
-	ActiveState->OnUpdate();
+	if (ActiveState != nullptr)
+	{
+		ActiveState->OnUpdate();
+	}
 }
 
 void CritterFinalStateMachine::SetState(IState* NewState)
