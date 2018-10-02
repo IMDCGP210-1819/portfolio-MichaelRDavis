@@ -10,8 +10,6 @@ public:
 	Critter();
 	~Critter();
 
-	void Talk();
-
 	inline void ReduceHunger() { Hunger++; }
 	inline void IncreaseHunger() { Hunger--; }
 

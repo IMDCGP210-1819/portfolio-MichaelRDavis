@@ -15,6 +15,8 @@ public:
 	bool IsValid() override;
 	IState* GetNextState() override;
 	void OnTransition() override;
+
+	HungryState* hungryState;
 };
 
 class IsFull : public ITransition
@@ -26,6 +28,8 @@ public:
 	bool IsValid() override;
 	IState* GetNextState() override;
 	void OnTransition() override;
+
+	HappyState* happyState;
 };
 
 class IsDead : public ITransition
@@ -37,4 +41,6 @@ public:
 	bool IsValid() override;
 	IState* GetNextState() override;
 	void OnTransition() override;
+
+	DeadState* deadState;
 };

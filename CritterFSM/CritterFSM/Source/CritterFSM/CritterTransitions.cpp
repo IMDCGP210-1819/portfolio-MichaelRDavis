@@ -20,7 +20,7 @@ bool IsHungry::IsValid()
 
 IState* IsHungry::GetNextState()
 {
-	return nullptr;
+	return hungryState;
 }
 
 void IsHungry::OnTransition()
@@ -45,7 +45,7 @@ bool IsFull::IsValid()
 
 IState* IsFull::GetNextState()
 {
-	return nullptr;
+	return happyState;
 }
 
 void IsFull::OnTransition()
@@ -70,7 +70,7 @@ bool IsDead::IsValid()
 
 IState* IsDead::GetNextState()
 {
-	return nullptr;
+	return deadState;
 }
 
 void IsDead::OnTransition()

@@ -20,6 +20,7 @@ void CritterFinalStateMachine::Update()
 {
 	if (ActiveState != nullptr)
 	{
+		ActiveState->OnEnter();
 		ActiveState->OnUpdate();
 	}
 }
