@@ -3,14 +3,14 @@
 
 #include <iostream>
 
-HappyState::HappyState()
+HappyState::HappyState(BoredState* boredState)
 {
-	isBored = new IsBored(this);
+	isBored = new IsBored(boredState);
 }
 
 void HappyState::OnEnter(Critter* owner)
 {
-	std::cout << "I am now happy" << std::endl;
+	
 }
 
 void HappyState::OnUpdate(Critter* owner)
@@ -20,17 +20,17 @@ void HappyState::OnUpdate(Critter* owner)
 
 void HappyState::OnExit(Critter* owner)
 {
-	std::cout << "I am getting bored now" << std::endl;
+	
 }
 
-BoredState::BoredState()
+BoredState::BoredState(HappyState* happyState)
 {
-	isHappy = new IsHappy(this);
+	isHappy = new IsHappy(happyState);
 }
 
 void BoredState::OnEnter(Critter* owner)
 {
-	std::cout << "Bored" << std::endl;
+	
 }
 
 void BoredState::OnUpdate(Critter* owner)

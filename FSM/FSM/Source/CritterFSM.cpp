@@ -4,7 +4,8 @@
 
 CritterFSM::CritterFSM()
 {
-	happyState = new HappyState();
+	happyState = new HappyState(boredState);
+	boredState = new BoredState(happyState);
 
 	initialState = happyState;
 	activeState = happyState;
@@ -14,12 +15,35 @@ void CritterFSM::Update(Critter* owner)
 {
 	if (happyState->isBored->IsValid(owner))
 	{
-		activeState->OnExit(owner);
+		if (activeState != nullptr)
+		{
+			activeState->OnExit(owner);
+		}
+
 		activeState = happyState->isBored->GetNextState(owner);
-		activeState->OnEnter(owner);
+		if (activeState != nullptr)
+		{
+			activeState->OnUpdate(owner);
+		}
+	}
+	else if(boredState->isHappy->IsValid(owner))
+	{
+		if (activeState != nullptr)
+		{
+			activeState->OnExit(owner);
+		}
+
+		activeState = boredState->isHappy->GetNextState(owner);
+		if (activeState != nullptr)
+		{
+			activeState->OnUpdate(owner);
+		}
 	}
 	else
 	{
-		activeState->OnUpdate(owner);
+		if (activeState != nullptr)
+		{
+			activeState->OnUpdate(owner);
+		}
 	}
 }

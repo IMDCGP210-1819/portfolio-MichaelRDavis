@@ -4,9 +4,9 @@
 
 #include <iostream>
 
-IsBored::IsBored(HappyState* happyState)
+IsBored::IsBored(BoredState* boredState)
 {
-	nextState = happyState;
+	nextState = boredState;
 }
 
 bool IsBored::IsValid(Critter* owner)
@@ -26,12 +26,12 @@ IState<Critter>* IsBored::GetNextState(Critter* owner)
 
 void IsBored::OnTransition(Critter* Owner)
 {
-	std::cout << "I am no longer happy" << std::endl;
+	
 }
 
-IsHappy::IsHappy(BoredState* boredState)
+IsHappy::IsHappy(HappyState* happyState)
 {
-	nextState = boredState;
+	nextState = happyState;
 }
 
 bool IsHappy::IsValid(Critter* owner)
@@ -51,5 +51,5 @@ IState<Critter>* IsHappy::GetNextState(Critter* owner)
 
 void IsHappy::OnTransition(Critter* Owner)
 {
-	std::cout << "I am no longer bored" << std::endl;
+	
 }

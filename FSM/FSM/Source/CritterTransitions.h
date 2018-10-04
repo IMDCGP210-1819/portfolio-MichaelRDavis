@@ -9,23 +9,23 @@ class HappyState;
 class IsBored : public ITransition<Critter>
 {
 public:
-	IsBored(HappyState* happyState);
+	IsBored(BoredState* boredState);
 
 	bool IsValid(Critter* owner) override;
 	IState<Critter>* GetNextState(Critter* owner) override;
 	void OnTransition(Critter* Owner) override;
 
-	IState<Critter>* nextState;
+	BoredState* nextState;
 };
 
 class IsHappy : public ITransition<Critter>
 {
 public:
-	IsHappy(BoredState* boredState);
+	IsHappy(HappyState* happyState);
 
 	bool IsValid(Critter* owner) override;
 	IState<Critter>* GetNextState(Critter* owner) override;
 	void OnTransition(Critter* Owner) override;
 
-	IState<Critter>* nextState;
+	HappyState* nextState;
 };
