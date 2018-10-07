@@ -11,6 +11,7 @@ class CritterFSM : public IFSM<Critter>
 public:
 	CritterFSM();
 
+	void SetNextState(IState<Critter>* NewState);
 	void Update(Critter* owner) override;
 
 	HappyState* happyState;

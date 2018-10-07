@@ -11,7 +11,7 @@ class HappyState;
 class HappyState : public IState<Critter>
 {
 public:
-	HappyState(BoredState* boredState);
+	HappyState();
 
 	void OnEnter(Critter* owner) override;
 	void OnUpdate(Critter* owner) override;
@@ -23,7 +23,7 @@ public:
 class BoredState : public IState<Critter>
 {
 public:
-	BoredState(HappyState* boredState);
+	BoredState();
 
 	void OnEnter(Critter* owner) override;
 	void OnUpdate(Critter* owner) override;

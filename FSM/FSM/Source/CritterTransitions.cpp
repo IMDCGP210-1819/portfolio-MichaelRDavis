@@ -4,9 +4,9 @@
 
 #include <iostream>
 
-IsBored::IsBored(BoredState* boredState)
+IsBored::IsBored()
 {
-	nextState = boredState;
+	nextState = nullptr;
 }
 
 bool IsBored::IsValid(Critter* owner)
@@ -29,9 +29,9 @@ void IsBored::OnTransition(Critter* Owner)
 	
 }
 
-IsHappy::IsHappy(HappyState* happyState)
+IsHappy::IsHappy()
 {
-	nextState = happyState;
+	nextState = nullptr;
 }
 
 bool IsHappy::IsValid(Critter* owner)

@@ -6,7 +6,6 @@
 Critter::Critter()
 {
 	critterFSM = new CritterFSM();
-
 	happy = 5;
 }
 

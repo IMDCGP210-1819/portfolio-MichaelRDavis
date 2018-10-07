@@ -9,7 +9,7 @@ class HappyState;
 class IsBored : public ITransition<Critter>
 {
 public:
-	IsBored(BoredState* boredState);
+	IsBored();
 
 	bool IsValid(Critter* owner) override;
 	IState<Critter>* GetNextState(Critter* owner) override;
@@ -21,7 +21,7 @@ public:
 class IsHappy : public ITransition<Critter>
 {
 public:
-	IsHappy(HappyState* happyState);
+	IsHappy();
 
 	bool IsValid(Critter* owner) override;
 	IState<Critter>* GetNextState(Critter* owner) override;

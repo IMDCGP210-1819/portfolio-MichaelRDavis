@@ -3,9 +3,9 @@
 
 #include <iostream>
 
-HappyState::HappyState(BoredState* boredState)
+HappyState::HappyState()
 {
-	isBored = new IsBored(boredState);
+	isBored = new IsBored();
 }
 
 void HappyState::OnEnter(Critter* owner)
@@ -23,9 +23,9 @@ void HappyState::OnExit(Critter* owner)
 	
 }
 
-BoredState::BoredState(HappyState* happyState)
+BoredState::BoredState()
 {
-	isHappy = new IsHappy(happyState);
+	isHappy = new IsHappy();
 }
 
 void BoredState::OnEnter(Critter* owner)
