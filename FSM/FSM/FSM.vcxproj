@@ -69,13 +69,21 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)Binaries\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Intermediates\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)Binaries\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Intermediates\$(Configuration)\</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)FSM\Source\AI;$(SolutionDir)FSM\Source\Critter\CritterAI;$(SolutionDir)FSM\Source\Critter\CritterGame;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -94,6 +102,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)FSM\Source\AI;$(SolutionDir)FSM\Source\Critter\CritterAI;$(SolutionDir)FSM\Source\Critter\CritterGame;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -115,19 +124,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Critter.h" />
-    <ClInclude Include="Source\CritterFSM.h" />
-    <ClInclude Include="Source\CritterStates.h" />
-    <ClInclude Include="Source\CritterTransitions.h" />
-    <ClInclude Include="Source\IFSM.h" />
-    <ClInclude Include="Source\IState.h" />
-    <ClInclude Include="Source\ITransition.h" />
+    <ClInclude Include="Source\Critter\CritterGame\Critter.h" />
+    <ClInclude Include="Source\Critter\CritterAI\CritterFSM.h" />
+    <ClInclude Include="Source\Critter\CritterAI\CritterStates.h" />
+    <ClInclude Include="Source\Critter\CritterAI\CritterTransitions.h" />
+    <ClInclude Include="Source\AI\IFSM.h" />
+    <ClInclude Include="Source\AI\IState.h" />
+    <ClInclude Include="Source\AI\ITransition.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Critter.cpp" />
-    <ClCompile Include="Source\CritterFSM.cpp" />
-    <ClCompile Include="Source\CritterStates.cpp" />
-    <ClCompile Include="Source\CritterTransitions.cpp" />
+    <ClCompile Include="Source\Critter\CritterGame\Critter.cpp" />
+    <ClCompile Include="Source\Critter\CritterAI\CritterFSM.cpp" />
+    <ClCompile Include="Source\Critter\CritterAI\CritterStates.cpp" />
+    <ClCompile Include="Source\Critter\CritterAI\CritterTransitions.cpp" />
     <ClCompile Include="Source\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

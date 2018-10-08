@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-#include "Critter.h"
+#include "Critter/CritterGame/Critter.h"
 
 int main()
 {
