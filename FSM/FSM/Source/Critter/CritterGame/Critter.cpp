@@ -4,11 +4,25 @@
 
 Critter::Critter()
 {
-	critterFSM = new CritterFSM();
-	happy = 5;
+	m_pCritterFSM = new CritterFSM();
+
+	m_happy = 5;
+	m_maxHappy = 10;
 }
 
 void Critter::RunStateMachine()
 {
-	critterFSM->Update(this);
+	m_pCritterFSM->Update(this);
+}
+
+void Critter::AddHappy()
+{
+	if (m_happy < m_maxHappy)
+		m_happy++;
+}
+
+void Critter::RemoveHappy()
+{
+	if (m_happy != 0)
+		m_happy--;
 }

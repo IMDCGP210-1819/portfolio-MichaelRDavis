@@ -9,11 +9,27 @@ public:
 
 	void RunStateMachine();
 
-	void AddHappy() { happy++; }
-	void RemoveHappy() { happy--; }
+	void AddHappy();
+	void RemoveHappy();
 
-	int happy;
-	int maxHappy;
+	inline bool IsHappy() const
+	{
+		return m_happy > 5;
+	}
 
-	CritterFSM* critterFSM;
+	inline bool IsBored() const
+	{
+		return m_happy < 5;
+	}
+
+	inline int GetHappy() const
+	{
+		return m_happy;
+	}
+
+protected:
+	CritterFSM* m_pCritterFSM;
+
+	int m_happy;
+	int m_maxHappy;
 };

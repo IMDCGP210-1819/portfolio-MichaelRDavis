@@ -17,6 +17,7 @@ int main()
 	while (isRunning)
 	{
 		critter->RunStateMachine();
+		std::cout << "Critter Happiness: " << critter->GetHappy() << std::endl;
 
 		std::string userInput;
 		std::cin >> userInput;

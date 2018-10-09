@@ -11,7 +11,7 @@ IsBored::IsBored()
 
 bool IsBored::IsValid(Critter* owner)
 {
-	if (owner->happy < 5)
+	if (owner->IsBored())
 	{
 		return true;
 	}
@@ -36,7 +36,7 @@ IsHappy::IsHappy()
 
 bool IsHappy::IsValid(Critter* owner)
 {
-	if (owner->happy > 5)
+	if (owner->IsHappy())
 	{
 		return true;
 	}
