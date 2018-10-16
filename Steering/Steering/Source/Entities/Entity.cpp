@@ -1,7 +1,5 @@
 #include "Entity.h"
 
-std::vector<Entity*> Entity::m_renderables;
-
 Entity::Entity()
 {
 	

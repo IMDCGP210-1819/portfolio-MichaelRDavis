@@ -1,6 +1,9 @@
 #pragma once
 
+#include <vector>
 #include "Entity.h"
+
+class SteeringBehaviors;
 
 class Boid : public Entity
 {
@@ -12,4 +15,13 @@ public:
 
 	void Update() override;
 	void Initialize() override;
+
+	inline const sf::Vector2f GetDirection() const { return m_direction; }
+
+	static std::vector<Boid*> m_renderables;
+
+protected:
+	SteeringBehaviors* m_pSteeringBehaviors;
+
+	sf::Vector2f m_direction;
 };

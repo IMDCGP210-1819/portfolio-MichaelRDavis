@@ -17,9 +17,6 @@ public:
 	inline void SetFileName(std::string newFilename) { m_filename = newFilename; }
 	inline void SetColor(sf::Color newColor) { m_color = newColor; }
 
-public:
-	static std::vector<Entity*> m_renderables;
-
 protected:
 	std::string m_filename;
 	sf::Sprite m_sprite;
