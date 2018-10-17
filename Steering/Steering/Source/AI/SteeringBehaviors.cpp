@@ -18,7 +18,7 @@ void SteeringBehaviors::SetOwner(Entity* newOnwer)
 
 sf::Vector2f SteeringBehaviors::Seek(sf::Vector2f targetVector)
 {
-	sf::Vector2f velocity; // TODO: Normalize this vector
+	sf::Vector2f velocity;
 	return velocity;
 }
 

@@ -160,6 +160,7 @@
     <ClInclude Include="Source\AI\SteeringBehaviors.h" />
     <ClInclude Include="Source\Entities\Boid.h" />
     <ClInclude Include="Source\Entities\Entity.h" />
+    <ClInclude Include="Source\Math\MathHelpers.h" />
     <ClInclude Include="Source\Math\Random.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
