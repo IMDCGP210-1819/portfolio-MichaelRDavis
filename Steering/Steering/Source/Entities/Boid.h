@@ -1,5 +1,7 @@
 #pragma once
 
+#define _USE_MATH_DEFINES
+#include <math.h>
 #include <vector>
 #include "Entity.h"
 
@@ -13,15 +15,12 @@ public:
 	explicit Boid(std::string file, sf::Color color);
 	~Boid();
 
-	void Update() override;
+	void Update(float deltaTime) override;
 	void Initialize() override;
 
-	inline const sf::Vector2f GetDirection() const { return m_direction; }
-
+public:
 	static std::vector<Boid*> m_renderables;
 
 protected:
 	SteeringBehaviors* m_pSteeringBehaviors;
-
-	sf::Vector2f m_direction;
 };

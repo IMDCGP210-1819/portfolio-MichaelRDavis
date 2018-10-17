@@ -1,4 +1,5 @@
 #include "SteeringBehaviors.h"
+#include "Entities/Entity.h"
 
 SteeringBehaviors::SteeringBehaviors()
 {
@@ -10,18 +11,26 @@ SteeringBehaviors::~SteeringBehaviors()
 
 }
 
-void SteeringBehaviors::Seek()
+void SteeringBehaviors::SetOwner(Entity* newOnwer)
 {
-
+	m_owner = newOnwer;
 }
 
-void SteeringBehaviors::Flee()
+sf::Vector2f SteeringBehaviors::Seek(sf::Vector2f targetVector)
 {
-
+	sf::Vector2f velocity; // TODO: Normalize this vector
+	return velocity;
 }
 
-void SteeringBehaviors::Arrive()
+sf::Vector2f SteeringBehaviors::Flee(sf::Vector2f targetVector)
 {
+	sf::Vector2f velocity;
+	return velocity;
+}
 
+sf::Vector2f SteeringBehaviors::Arrive(sf::Vector2f targetVector)
+{
+	sf::Vector2f velocity;
+	return velocity;
 }
 

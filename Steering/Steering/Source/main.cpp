@@ -12,8 +12,12 @@ int main()
 		Boid* boid = new Boid();
 	}
 
+	sf::Clock clock;
+
 	while (window.isOpen())
 	{
+		sf::Time elapsed = clock.restart();
+
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
@@ -25,7 +29,7 @@ int main()
 
 		for (auto entity : Boid::m_renderables)
 		{
-			entity->Update();
+			entity->Update(elapsed.asSeconds());
 		}
 
 		for (auto entity : Boid::m_renderables)

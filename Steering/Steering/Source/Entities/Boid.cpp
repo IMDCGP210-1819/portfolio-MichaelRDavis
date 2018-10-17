@@ -1,5 +1,6 @@
 #include "Boid.h"
 #include "../AI/SteeringBehaviors.h"
+#include "../Math/Random.h"
 
 std::vector<Boid*> Boid::m_renderables;
 
@@ -37,9 +38,10 @@ Boid::~Boid()
 	delete m_pSteeringBehaviors;
 }
 
-void Boid::Update()
+void Boid::Update(float deltaTime)
 {
-
+	sf::Vector2f pos = getPosition() + (m_velocity * 0.1f);
+	setPosition(pos);
 }
 
 void Boid::Initialize()
@@ -51,6 +53,13 @@ void Boid::Initialize()
 
 	m_sprite.setTexture(m_texture);
 	m_sprite.setColor(m_color);
+
+	float angle = FRandom::Instance()->GetRange(0, 361);
+	setRotation(angle);
+#pragma warning(push)
+#pragma warning(disable : 4244)
+	m_velocity = sf::Vector2f(cos((float) angle * M_PI / 180), sin((float) angle * M_PI / 180));
+#pragma warning(pop)
 
 	m_renderables.push_back(this);
 }
