@@ -20,6 +20,7 @@ public:
 
 	void SetOwner(Entity* newOnwer);
 	void SetBehavior(EBehavior newBehavior);
+	sf::Vector2f Calculate(Entity* owner);
 
 	sf::Vector2f Seek(sf::Vector2f targetVector);
 	sf::Vector2f Flee(sf::Vector2f targetVector);

@@ -1,11 +1,13 @@
 #include "SteeringBehaviors.h"
 #include "Entities/Entity.h"
+#include "Entities/Boid.h"
 #include "Math/MathHelpers.h"
 #include <algorithm>
 
 SteeringBehaviors::SteeringBehaviors()
 {
-
+	m_owner = nullptr;
+	m_activeBehavior = EBehavior::ENone;
 }
 
 SteeringBehaviors::~SteeringBehaviors()
@@ -21,6 +23,26 @@ void SteeringBehaviors::SetOwner(Entity* newOnwer)
 void SteeringBehaviors::SetBehavior(EBehavior newBehavior)
 {
 	m_activeBehavior = newBehavior;
+}
+
+sf::Vector2f SteeringBehaviors::Calculate(Entity* owner)
+{
+	sf::Vector2f velocity = m_owner->GetVelocity();
+
+	if (m_activeBehavior == EBehavior::ENone)
+	{
+		return MathHelpers::ZeroVector;
+	}
+	else if (m_activeBehavior == EBehavior::ESeek)
+	{
+		Boid* boid = reinterpret_cast<Boid*>(owner);
+		velocity = Seek(boid->m_seekTarget);
+		return velocity;
+	}
+	else
+	{
+		return MathHelpers::ZeroVector;
+	}
 }
 
 sf::Vector2f SteeringBehaviors::Seek(sf::Vector2f targetVector)

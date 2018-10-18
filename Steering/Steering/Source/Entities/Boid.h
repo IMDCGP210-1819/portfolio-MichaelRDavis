@@ -18,8 +18,11 @@ public:
 	void Update(float deltaTime) override;
 	void Initialize() override;
 
+	inline SteeringBehaviors* GetSteeringBehavior() const { return m_pSteeringBehaviors; }
+
 public:
 	static std::vector<Boid*> m_renderables;
+	sf::Vector2f m_seekTarget;
 
 protected:
 	SteeringBehaviors* m_pSteeringBehaviors;
