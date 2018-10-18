@@ -13,8 +13,10 @@ Boid::Boid()
 	m_pSteeringBehaviors = new SteeringBehaviors();
 	if (m_pSteeringBehaviors)
 	{
-
+		m_pSteeringBehaviors->SetOwner(this);
 	}
+
+	m_speed = 5.0f;
 
 	Initialize();
 }
@@ -40,7 +42,8 @@ Boid::~Boid()
 
 void Boid::Update(float deltaTime)
 {
-	sf::Vector2f pos = getPosition() + (m_velocity * 0.1f);
+	//getPosition() + (m_velocity * 0.1f);
+	sf::Vector2f pos = m_pSteeringBehaviors->Seek(sf::Vector2f(30.0f, 45.0f));
 	setPosition(pos);
 }
 
@@ -56,9 +59,10 @@ void Boid::Initialize()
 
 	float angle = FRandom::Instance()->GetRange(0, 361);
 	setRotation(angle);
+
 #pragma warning(push)
 #pragma warning(disable : 4244)
-	m_velocity = sf::Vector2f(cos((float) angle * M_PI / 180), sin((float) angle * M_PI / 180));
+	m_velocity = sf::Vector2f(cos((float) angle * M_PI / 180.0f), sin((float) angle * M_PI / 180.0f));
 #pragma warning(pop)
 
 	m_renderables.push_back(this);
