@@ -53,3 +53,28 @@ void IsHappy::OnTransition(Critter* Owner)
 {
 	
 }
+
+IsHungry::IsHungry()
+{
+	m_pNextState = nullptr;
+}
+
+bool IsHungry::IsValid(Critter* owner)
+{
+	if (owner->IsHungry())
+	{
+		return true;
+	}
+
+	return false;
+}
+
+IState<Critter>* IsHungry::GetNextState(Critter* owner)
+{
+	return m_pNextState;
+}
+
+void IsHungry::OnTransition(Critter* owner)
+{
+
+}

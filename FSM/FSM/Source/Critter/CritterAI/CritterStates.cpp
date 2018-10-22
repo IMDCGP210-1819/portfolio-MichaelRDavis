@@ -42,3 +42,23 @@ void BoredState::OnExit(Critter* owner)
 {
 
 }
+
+HungryState::HungryState()
+{
+	m_pIsHungry = new IsHungry();
+}
+
+void HungryState::OnEnter(Critter* owner)
+{
+
+}
+
+void HungryState::OnUpdate(Critter* owner)
+{
+	std::cout << "Hungry!" << std::endl;
+}
+
+void HungryState::OnExit(Critter* owner)
+{
+
+}

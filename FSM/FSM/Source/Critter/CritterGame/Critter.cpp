@@ -6,8 +6,10 @@ Critter::Critter()
 {
 	m_pCritterFSM = new CritterFSM();
 
-	m_happy = 5;
-	m_maxHappy = 10;
+	m_happiness = 5;
+	m_maxHappiness = 10;
+	m_hunger = 0;
+	m_maxHunger = 10;
 }
 
 void Critter::RunStateMachine()
@@ -15,14 +17,26 @@ void Critter::RunStateMachine()
 	m_pCritterFSM->Update(this);
 }
 
-void Critter::AddHappy()
+void Critter::AddHappiness()
 {
-	if (m_happy < m_maxHappy)
-		m_happy++;
+	if (m_happiness < m_maxHappiness)
+		m_happiness++;
 }
 
-void Critter::RemoveHappy()
+void Critter::RemoveHappiness()
 {
-	if (m_happy != 0)
-		m_happy--;
+	if (m_happiness != 0)
+		m_happiness--;
+}
+
+void Critter::AddHunger()
+{
+	if (m_hunger < m_maxHunger)
+		m_hunger++;
+}
+
+void Critter::RemoveHunger()
+{
+	if (m_hunger != 0)
+		m_hunger--;
 }

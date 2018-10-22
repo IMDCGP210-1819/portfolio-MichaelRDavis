@@ -27,3 +27,15 @@ public:
 
 	IState<Critter>* m_pNextState;
 };
+
+class IsHungry : public ITransition<Critter>
+{
+public:
+	IsHungry();
+
+	bool IsValid(Critter* owner) override;
+	IState<Critter>* GetNextState(Critter* owner) override;
+	void OnTransition(Critter* owner) override;
+
+	IState<Critter>* m_pNextState;
+};

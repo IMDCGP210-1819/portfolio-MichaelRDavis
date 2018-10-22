@@ -5,6 +5,7 @@
 class Critter;
 class HappyState;
 class BoredState;
+class HungryState;
 
 class CritterFSM : public IFSM<Critter>
 {
@@ -16,4 +17,5 @@ public:
 
 	HappyState* m_pHappyState;
 	BoredState* m_pBoredState;
+	HungryState* m_pHungryState;
 };
