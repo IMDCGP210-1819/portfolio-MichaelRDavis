@@ -5,11 +5,7 @@
 class Decorator : public Behavior
 {
 public:
-	Decorator(Behavior* child)
-		: m_pChild(child)
-	{
-
-	}
+	Decorator(Behavior* child);
 
 protected:
 	Behavior* m_pChild;

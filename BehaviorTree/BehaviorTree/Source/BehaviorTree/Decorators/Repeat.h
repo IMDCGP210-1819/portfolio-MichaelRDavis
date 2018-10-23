@@ -5,11 +5,5 @@
 class Repeat : public Decorator
 {
 public:
-	virtual EStatus Update() override
-	{
-		while (true)
-		{
-
-		}
-	}
+	virtual EStatus Update() override;
 };
