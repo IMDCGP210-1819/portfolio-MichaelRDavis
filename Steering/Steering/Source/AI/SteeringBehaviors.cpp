@@ -39,6 +39,17 @@ sf::Vector2f SteeringBehaviors::Calculate(Entity* owner)
 		velocity = Seek(boid->m_seekTarget);
 		return velocity;
 	}
+	else if (m_activeBehavior == EBehavior::EFlee)
+	{
+		Boid* boid = reinterpret_cast<Boid*>(owner);
+		velocity = Flee(boid->m_fleeTarget);
+	}
+
+	else if (m_activeBehavior == EBehavior::EArrive)
+	{
+		Boid* boid = reinterpret_cast<Boid*>(owner);
+		velocity = Arrive(boid->m_arriveTarget, 0.5f);
+	}
 	else
 	{
 		return MathHelpers::ZeroVector;

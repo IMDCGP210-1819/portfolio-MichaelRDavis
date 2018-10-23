@@ -14,9 +14,11 @@ Boid::Boid()
 	if (m_pSteeringBehaviors)
 	{
 		m_pSteeringBehaviors->SetOwner(this);
+		m_pSteeringBehaviors->SetBehavior(EBehavior::ESeek);
 	}
 
 	m_speed = 5.0f;
+	m_seekTarget = sf::Vector2f(55.0f, 65.0f);
 
 	Initialize();
 }

@@ -38,5 +38,11 @@
     <ClInclude Include="Source\BehaviorTree\Composites\Composite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\BehaviorTree\Composites\Sequence.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BehaviorTree\Blackboard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

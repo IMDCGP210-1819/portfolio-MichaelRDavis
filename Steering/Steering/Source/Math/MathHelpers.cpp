@@ -16,7 +16,7 @@ float MathHelpers::Length(const sf::Vector2f& vec)
 
 sf::Vector2f MathHelpers::Normalize(const sf::Vector2f& vec)
 {
-	float length = (float)sqrt(vec.x * vec.x) + (vec.y * vec.y);
+	float length = Length(vec);
 	if (length != 0)
 		return sf::Vector2f(vec.x / length, vec.y / length);
 	else

@@ -128,7 +128,9 @@
   <ItemGroup>
     <ClInclude Include="Source\BehaviorTree\Behavior.h" />
     <ClInclude Include="Source\BehaviorTree\BehaviorTree.h" />
+    <ClInclude Include="Source\BehaviorTree\Blackboard.h" />
     <ClInclude Include="Source\BehaviorTree\Composites\Composite.h" />
+    <ClInclude Include="Source\BehaviorTree\Composites\Sequence.h" />
     <ClInclude Include="Source\BehaviorTree\Decorators\Decorator.h" />
     <ClInclude Include="Source\BehaviorTree\Decorators\Repeat.h" />
   </ItemGroup>
