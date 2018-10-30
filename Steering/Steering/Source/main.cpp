@@ -29,12 +29,12 @@ int main()
 
 		for (auto entity : Boid::m_renderables)
 		{
-			entity->Update(elapsed.asSeconds());
+			window.draw(entity->GetSprite(), entity->getTransform());
 		}
 
 		for (auto entity : Boid::m_renderables)
 		{
-			window.draw(entity->GetSprite(), entity->getTransform());
+			entity->Update(elapsed.asSeconds());
 		}
 
 		window.display();

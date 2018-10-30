@@ -17,8 +17,8 @@ Boid::Boid()
 		m_pSteeringBehaviors->SetBehavior(EBehavior::ESeek);
 	}
 
-	m_speed = 5.0f;
-	m_seekTarget = sf::Vector2f(55.0f, 65.0f);
+	m_speed = 0.1f;
+	m_seekTarget = sf::Vector2f(55.0f, -65.0f);
 
 	Initialize();
 }
@@ -44,7 +44,7 @@ Boid::~Boid()
 
 void Boid::Update(float deltaTime)
 {
-	sf::Vector2f pos = m_pSteeringBehaviors->Calculate(this);
+	sf::Vector2f pos = m_pSteeringBehaviors->Calculate(this) + (m_velocity * m_speed);
 	setPosition(pos);
 }
 
