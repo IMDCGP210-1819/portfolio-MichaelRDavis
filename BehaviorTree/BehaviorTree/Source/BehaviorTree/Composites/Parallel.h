@@ -14,6 +14,10 @@ public:
 	Parallel(EPolicy success, EPolicy failure);
 
 protected:
-	EPolicy m_successPolicy;
+	virtual EStatus Update() override;
+	virtual void OnTerminate(EStatus status) override;
 
+protected:
+	EPolicy m_successPolicy;
+	EPolicy m_failurePolicy;
 };
