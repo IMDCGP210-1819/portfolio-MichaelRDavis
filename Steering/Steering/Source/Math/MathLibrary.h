@@ -3,7 +3,7 @@
 #include <math.h>
 #include <SFML/System/Vector2.hpp>
 
-class MathHelpers
+class Math
 {
 public:
 	// Math functions

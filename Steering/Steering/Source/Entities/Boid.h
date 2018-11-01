@@ -21,7 +21,6 @@ public:
 	inline SteeringBehaviors* GetSteeringBehavior() const { return m_pSteeringBehaviors; }
 
 public:
-	static std::vector<Boid*> m_renderables;
 	sf::Vector2f m_seekTarget;
 	sf::Vector2f m_fleeTarget;
 	sf::Vector2f m_arriveTarget;

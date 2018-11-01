@@ -2,6 +2,8 @@
 
 #include <SFML/Graphics.hpp>
 
+class World;
+
 class Entity : public sf::Transformable
 {
 public:
@@ -12,6 +14,8 @@ public:
 
 	virtual void Update(float deltaTime) = 0;
 	virtual void Initialize() = 0;
+
+	inline World* GetWorld() const { return m_worldObject; }
 
 	inline const sf::Sprite GetSprite() const { return m_sprite; }
 	inline void SetFileName(std::string newFilename) { m_filename = newFilename; }
@@ -25,6 +29,8 @@ public:
 	inline float GetTurnRate() const { return m_turnRate; }
 
 protected:
+	World* m_worldObject;
+
 	std::string m_filename;
 	sf::Sprite m_sprite;
 	sf::Texture m_texture;

@@ -1,8 +1,7 @@
 #include "Boid.h"
 #include "../AI/SteeringBehaviors.h"
 #include "../Math/Random.h"
-
-std::vector<Boid*> Boid::m_renderables;
+#include "../Entities/World.h"
 
 Boid::Boid()
 	: Entity()
@@ -66,5 +65,5 @@ void Boid::Initialize()
 	m_velocity = sf::Vector2f(cos((float) angle * M_PI / 180.0f), sin((float) angle * M_PI / 180.0f));
 #pragma warning(pop)
 
-	m_renderables.push_back(this);
+	m_worldObject->m_renderables.push_back(this);
 }

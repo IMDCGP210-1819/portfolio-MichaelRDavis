@@ -153,15 +153,17 @@
     <ClCompile Include="Source\AI\SteeringBehaviors.cpp" />
     <ClCompile Include="Source\Entities\Boid.cpp" />
     <ClCompile Include="Source\Entities\Entity.cpp" />
+    <ClCompile Include="Source\Entities\World.cpp" />
     <ClCompile Include="Source\main.cpp" />
-    <ClCompile Include="Source\Math\MathHelpers.cpp" />
+    <ClCompile Include="Source\Math\MathLibrary.cpp" />
     <ClCompile Include="Source\Math\Random.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\AI\SteeringBehaviors.h" />
     <ClInclude Include="Source\Entities\Boid.h" />
     <ClInclude Include="Source\Entities\Entity.h" />
-    <ClInclude Include="Source\Math\MathHelpers.h" />
+    <ClInclude Include="Source\Entities\World.h" />
+    <ClInclude Include="Source\Math\MathLibrary.h" />
     <ClInclude Include="Source\Math\Random.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "Entities/Boid.h"
+#include "Entities/World.h"
 
 const int MAX_BOIDS = 5;
 
@@ -14,6 +15,8 @@ int main()
 
 	sf::Clock clock;
 
+	World world;
+
 	while (window.isOpen())
 	{
 		sf::Time elapsed = clock.restart();
@@ -27,15 +30,8 @@ int main()
 
 		window.clear();
 
-		for (auto entity : Boid::m_renderables)
-		{
-			window.draw(entity->GetSprite(), entity->getTransform());
-		}
-
-		for (auto entity : Boid::m_renderables)
-		{
-			entity->Update(elapsed.asSeconds());
-		}
+		world.Render(window);
+		world.Update(elapsed);
 
 		window.display();
 	}

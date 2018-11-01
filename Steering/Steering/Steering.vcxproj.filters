@@ -30,7 +30,10 @@
     <ClCompile Include="Source\Math\Random.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Math\MathHelpers.cpp">
+    <ClCompile Include="Source\Math\MathLibrary.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Entities\World.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,7 +50,10 @@
     <ClInclude Include="Source\Math\Random.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Math\MathHelpers.h">
+    <ClInclude Include="Source\Math\MathLibrary.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Entities\World.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

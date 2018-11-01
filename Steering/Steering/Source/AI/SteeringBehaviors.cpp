@@ -1,7 +1,7 @@
 #include "SteeringBehaviors.h"
 #include "Entities/Entity.h"
 #include "Entities/Boid.h"
-#include "Math/MathHelpers.h"
+#include "Math/MathLibrary.h"
 #include <algorithm>
 
 SteeringBehaviors::SteeringBehaviors()
@@ -31,7 +31,7 @@ sf::Vector2f SteeringBehaviors::Calculate(Entity* owner)
 
 	if (m_activeBehavior == EBehavior::ENone)
 	{
-		return MathHelpers::ZeroVector;
+		return Math::ZeroVector;
 	}
 	else if (m_activeBehavior == EBehavior::ESeek)
 	{
@@ -52,26 +52,26 @@ sf::Vector2f SteeringBehaviors::Calculate(Entity* owner)
 	}
 	else
 	{
-		return MathHelpers::ZeroVector;
+		return Math::ZeroVector;
 	}
 }
 
 sf::Vector2f SteeringBehaviors::Seek(sf::Vector2f targetVector)
 {
-	sf::Vector2f velocity = MathHelpers::Normalize(m_owner->getPosition() - targetVector) * m_owner->GetSpeed();
+	sf::Vector2f velocity = Math::Normalize(m_owner->getPosition() - targetVector) * m_owner->GetSpeed();
 	return velocity - m_owner->GetVelocity();
 }
 
 sf::Vector2f SteeringBehaviors::Flee(sf::Vector2f targetVector)
 {
-	sf::Vector2f velocity = MathHelpers::Normalize(m_owner->getPosition() - targetVector) * m_owner->GetSpeed();
+	sf::Vector2f velocity = Math::Normalize(m_owner->getPosition() - targetVector) * m_owner->GetSpeed();
 	return velocity - m_owner->GetVelocity();
 }
 
 sf::Vector2f SteeringBehaviors::Arrive(sf::Vector2f targetVector, float deacceleration)
 {
 	const sf::Vector2f& targetPosition = targetVector - m_owner->getPosition();
-	float distance = MathHelpers::Length(targetPosition - m_owner->getPosition());
+	float distance = Math::Length(targetPosition - m_owner->getPosition());
 	if (distance > 0.0f)
 	{
 		const float deaccel = 0.3f;
@@ -82,6 +82,6 @@ sf::Vector2f SteeringBehaviors::Arrive(sf::Vector2f targetVector, float deaccele
 		return velocity - m_owner->GetVelocity();
 	}
 
-	return MathHelpers::ZeroVector;
+	return Math::ZeroVector;
 }
 

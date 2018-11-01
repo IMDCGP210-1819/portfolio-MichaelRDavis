@@ -36,6 +36,9 @@
     <ClCompile Include="Source\BehaviorTree\Decorators\Decorator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\BehaviorTree\Composites\Parallel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\BehaviorTree\Decorators\Decorator.h">
@@ -57,6 +60,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\BehaviorTree\Blackboard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\BehaviorTree\Composites\Parallel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
