@@ -1,12 +1,12 @@
 #pragma once
 
-#include <cstdint>
-
+template<typename T>
 class Blackboard
 {
 public:
 	Blackboard();
+	virtual ~Blackboard();
 
 protected:
-	uint16_t m_size;
+	T type;
 };
