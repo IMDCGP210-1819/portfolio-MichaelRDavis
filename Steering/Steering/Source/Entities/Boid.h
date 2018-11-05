@@ -21,6 +21,9 @@ public:
 	inline SteeringBehaviors* GetSteeringBehavior() const { return m_pSteeringBehaviors; }
 
 public:
+	float m_fleeDistance;
+	float m_deacceleration;
+
 	sf::Vector2f m_seekTarget;
 	sf::Vector2f m_fleeTarget;
 	sf::Vector2f m_arriveTarget;

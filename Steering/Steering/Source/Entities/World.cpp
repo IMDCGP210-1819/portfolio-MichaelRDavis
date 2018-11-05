@@ -5,7 +5,15 @@ std::vector<Boid*> World::m_renderables;
 
 World::World()
 {
-	
+	for (int i = 0; i < MAX_BOIDS; i++)
+	{
+		Boid* boid = new Boid();
+	}
+}
+
+World::~World()
+{
+
 }
 
 void World::Render(sf::RenderWindow& window)

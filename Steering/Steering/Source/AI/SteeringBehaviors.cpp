@@ -42,13 +42,13 @@ sf::Vector2f SteeringBehaviors::Calculate(Entity* owner)
 	else if (m_activeBehavior == EBehavior::EFlee)
 	{
 		Boid* boid = reinterpret_cast<Boid*>(owner);
-		velocity = Flee(boid->m_fleeTarget);
+		return velocity = Flee(boid->m_fleeTarget, boid->m_fleeDistance);
 	}
 
 	else if (m_activeBehavior == EBehavior::EArrive)
 	{
 		Boid* boid = reinterpret_cast<Boid*>(owner);
-		velocity = Arrive(boid->m_arriveTarget, 0.5f);
+		return velocity = Arrive(boid->m_arriveTarget, 0.5f);
 	}
 	else
 	{
@@ -62,8 +62,14 @@ sf::Vector2f SteeringBehaviors::Seek(sf::Vector2f targetVector)
 	return velocity - m_owner->GetVelocity();
 }
 
-sf::Vector2f SteeringBehaviors::Flee(sf::Vector2f targetVector)
+sf::Vector2f SteeringBehaviors::Flee(sf::Vector2f targetVector, float m_fleeDistance)
 {
+	const float fleeDistSq = m_fleeDistance * m_fleeDistance;
+	if (Math::LengthSquared(m_owner->getPosition(), targetVector) > fleeDistSq)
+	{
+		return Math::ZeroVector;
+	}
+
 	sf::Vector2f velocity = Math::Normalize(m_owner->getPosition() - targetVector) * m_owner->GetSpeed();
 	return velocity - m_owner->GetVelocity();
 }

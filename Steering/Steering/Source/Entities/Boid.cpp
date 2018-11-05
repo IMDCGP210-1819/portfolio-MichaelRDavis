@@ -17,8 +17,10 @@ Boid::Boid()
 	}
 
 	m_speed = 0.1f;
-	m_seekTarget = sf::Vector2f(55.0f, -65.0f);
-
+	m_fleeDistance = 100.0f;
+	m_deacceleration = 0.5f;
+	m_seekTarget = sf::Vector2f(550.0f, 765.0f);
+	
 	Initialize();
 }
 

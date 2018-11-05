@@ -14,6 +14,13 @@ float Math::Length(const sf::Vector2f& vec)
 	return length;
 }
 
+float Math::LengthSquared(const sf::Vector2f& vec, const sf::Vector2f vec2)
+{
+	float y = vec2.y - vec.y;
+	float x = vec2.x - vec.x;
+	return y * y + x * x;
+}
+
 sf::Vector2f Math::Normalize(const sf::Vector2f& vec)
 {
 	float length = Length(vec);
