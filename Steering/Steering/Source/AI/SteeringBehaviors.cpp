@@ -91,3 +91,9 @@ sf::Vector2f SteeringBehaviors::Arrive(sf::Vector2f targetVector, float deaccele
 	return Math::ZeroVector;
 }
 
+sf::Vector2f SteeringBehaviors::Pursuit(const Entity* intersectingEntity)
+{
+	sf::Vector2f evaderPos = intersectingEntity->getPosition() - m_owner->getPosition();
+
+}
+

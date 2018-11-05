@@ -4,6 +4,7 @@
 
 class Entity;
 
+/** List of steering behaviors */
 enum class EBehavior : unsigned char
 {
 	ENone,
@@ -52,6 +53,11 @@ public:
 	*	@param deacceleration - 
 	*/
 	sf::Vector2f Arrive(sf::Vector2f targetVector, float deacceleration);
+
+	/** Moves the owning entity towards the intersected position of an entity to intercept. 
+	*   @param intersectingEntity - The entity to intersect
+	*/
+	sf::Vector2f Pursuit(const Entity* intersectingEntity);
 
 private:
 	/** The owner of this behavior */
