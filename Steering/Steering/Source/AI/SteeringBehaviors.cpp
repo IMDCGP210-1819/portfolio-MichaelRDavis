@@ -95,5 +95,15 @@ sf::Vector2f SteeringBehaviors::Pursuit(const Entity* intersectingEntity)
 {
 	sf::Vector2f evaderPos = intersectingEntity->getPosition() - m_owner->getPosition();
 
+	float relDirection = Math::DotProduct(m_owner->GetDirection(), intersectingEntity->GetDirection());
+
+	if (Math::DotProduct(evaderPos, m_owner->GetDirection()) > 0 && relDirection < -0.95f)
+	{
+		return Seek(intersectingEntity->getPosition());
+	}
+
+	float heading = Math::Length(evaderPos) / (m_owner->GetSpeed() + intersectingEntity->GetSpeed());
+
+	return Seek(intersectingEntity->getPosition() + intersectingEntity->GetVelocity() * heading);
 }
 
