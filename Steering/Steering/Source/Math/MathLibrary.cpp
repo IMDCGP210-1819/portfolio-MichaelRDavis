@@ -20,7 +20,12 @@ float Math::Length(const sf::Vector2f& vec)
 	return length;
 }
 
-float Math::LengthSquared(const sf::Vector2f& vec, const sf::Vector2f& vec2)
+float Math::LengthSquared(const sf::Vector2f& vec)
+{
+	return 0.0f;
+}
+
+float Math::LengthSquared2D(const sf::Vector2f& vec, const sf::Vector2f& vec2)
 {
 	float y = vec2.y - vec.y;
 	float x = vec2.x - vec.x;

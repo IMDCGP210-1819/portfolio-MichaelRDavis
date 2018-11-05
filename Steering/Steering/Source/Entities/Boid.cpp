@@ -1,6 +1,7 @@
 #include "Boid.h"
 #include "../AI/SteeringBehaviors.h"
 #include "../Math/Random.h"
+#include "../Math/MathLibrary.h"
 #include "../Entities/World.h"
 
 Boid::Boid()
@@ -16,10 +17,11 @@ Boid::Boid()
 		m_pSteeringBehaviors->SetBehavior(EBehavior::ESeek);
 	}
 
-	m_speed = 0.1f;
+	m_speed = 100.0f;
+	m_velocity = Math::ZeroVector;
 	m_fleeDistance = 100.0f;
 	m_deacceleration = 0.5f;
-	m_seekTarget = sf::Vector2f(550.0f, 765.0f);
+	m_seekTarget = sf::Vector2f(550.0f, -550.0f);
 	
 	Initialize();
 }
@@ -45,7 +47,7 @@ Boid::~Boid()
 
 void Boid::Update(float deltaTime)
 {
-	sf::Vector2f pos = m_pSteeringBehaviors->Calculate(this) + (m_velocity * m_speed);
+	sf::Vector2f pos = m_pSteeringBehaviors->Calculate(this) /*+ (m_velocity */* m_speed * deltaTime;
 	setPosition(pos);
 }
 

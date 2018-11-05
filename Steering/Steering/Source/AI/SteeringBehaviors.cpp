@@ -70,7 +70,7 @@ sf::Vector2f SteeringBehaviors::Seek(sf::Vector2f targetVector)
 sf::Vector2f SteeringBehaviors::Flee(sf::Vector2f targetVector, float fleeDistance)
 {
 	const float fleeDistSq = fleeDistance * fleeDistance;
-	if (Math::LengthSquared(m_owner->getPosition(), targetVector) > fleeDistSq)
+	if (Math::LengthSquared2D(m_owner->getPosition(), targetVector) > fleeDistSq)
 	{
 		return Math::ZeroVector;
 	}
@@ -110,5 +110,15 @@ sf::Vector2f SteeringBehaviors::Pursuit(const Entity* intersectingEntity)
 	float heading = Math::Length(evaderPos) / (m_owner->GetSpeed() + intersectingEntity->GetSpeed());
 
 	return Seek(intersectingEntity->getPosition() + intersectingEntity->GetVelocity() * heading);
+}
+
+sf::Vector2f SteeringBehaviors::Evade(const Entity* evadingEntity)
+{
+	sf::Vector2f evading = evadingEntity->getPosition() - m_owner->getPosition();
+
+	//const float threatRange = 100.0f;
+	//if(Math::LengthSquared(evading))
+
+	return Math::ZeroVector;
 }
 

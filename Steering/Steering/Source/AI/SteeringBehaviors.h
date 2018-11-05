@@ -60,6 +60,11 @@ public:
 	*/
 	sf::Vector2f Pursuit(const Entity* intersectingEntity);
 
+	/** Moves the owning entity away from a pursing entity. 
+	*	@param evader - The entity to evade
+	*/
+	sf::Vector2f Evade(const Entity* evadingEntity);
+
 private:
 	/** The owner of this behavior */
 	Entity* m_owner;
