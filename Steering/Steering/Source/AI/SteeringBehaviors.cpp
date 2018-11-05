@@ -50,6 +50,11 @@ sf::Vector2f SteeringBehaviors::Calculate(Entity* owner)
 		Boid* boid = reinterpret_cast<Boid*>(owner);
 		return velocity = Arrive(boid->m_arriveTarget, 0.5f);
 	}
+	else if (m_activeBehavior == EBehavior::EPursuit)
+	{
+		Boid* boid = reinterpret_cast<Boid*>(owner);
+		return velocity = Pursuit(nullptr);
+	}
 	else
 	{
 		return Math::ZeroVector;

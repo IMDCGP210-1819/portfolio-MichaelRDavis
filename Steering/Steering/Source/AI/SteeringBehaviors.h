@@ -10,7 +10,8 @@ enum class EBehavior : unsigned char
 	ENone,
 	ESeek,
 	EFlee,
-	EArrive
+	EArrive,
+	EPursuit
 };
 
 class SteeringBehaviors
