@@ -62,9 +62,9 @@ sf::Vector2f SteeringBehaviors::Seek(sf::Vector2f targetVector)
 	return velocity - m_owner->GetVelocity();
 }
 
-sf::Vector2f SteeringBehaviors::Flee(sf::Vector2f targetVector, float m_fleeDistance)
+sf::Vector2f SteeringBehaviors::Flee(sf::Vector2f targetVector, float fleeDistance)
 {
-	const float fleeDistSq = m_fleeDistance * m_fleeDistance;
+	const float fleeDistSq = fleeDistance * fleeDistance;
 	if (Math::LengthSquared(m_owner->getPosition(), targetVector) > fleeDistSq)
 	{
 		return Math::ZeroVector;
