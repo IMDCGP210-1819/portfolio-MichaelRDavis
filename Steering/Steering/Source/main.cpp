@@ -7,7 +7,7 @@ int main()
 	sf::RenderWindow window(sf::VideoMode(1024, 768), "Steering");
 
 	sf::Clock clock;
-	World world;
+	World* world = new World();
 
 	while (window.isOpen())
 	{
@@ -21,8 +21,8 @@ int main()
 
 		window.clear();
 
-		world.Render(window);
-		world.Update(elapsed);
+		world->Render(window);
+		world->Update(elapsed);
 
 		window.display();
 	}
