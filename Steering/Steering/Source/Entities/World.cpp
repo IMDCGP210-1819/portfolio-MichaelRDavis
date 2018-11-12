@@ -31,3 +31,8 @@ void World::Update(sf::Time& time)
 		entity->Update(time.asSeconds());
 	}
 }
+
+void World::Wrap(sf::Vector2f position, int x, int y)
+{
+
+}
