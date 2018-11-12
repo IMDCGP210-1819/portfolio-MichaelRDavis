@@ -16,4 +16,6 @@ public:
 
 	static std::vector<Boid*> m_renderables;
 	const int MAX_BOIDS = 5;
+	const int WORLD_BOUNDS_X = 1024;
+	const int WORLD_BOUNDS_Y = 768;
 };

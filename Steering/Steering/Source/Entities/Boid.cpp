@@ -48,7 +48,7 @@ Boid::~Boid()
 void Boid::Update(float deltaTime)
 {
 	sf::Vector2f pos = m_pSteeringBehaviors->Calculate(this) /*+ (m_velocity */* m_speed * deltaTime;
-	setPosition(pos);
+	setPosition(pos + m_velocity);
 }
 
 void Boid::Initialize()
