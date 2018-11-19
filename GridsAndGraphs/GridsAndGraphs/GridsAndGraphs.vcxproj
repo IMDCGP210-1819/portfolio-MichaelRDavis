@@ -87,7 +87,13 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)GridsAndGraphs\Dependencies\SFML-2.5.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)GridsAndGraphs\Dependencies\SFML-2.5.0\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;winmm.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -118,9 +124,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Graphs\GraphNodeBase.h" />
+    <ClInclude Include="Source\Graphs\RenderGraphNode.h" />
     <ClInclude Include="Source\QuadTree\QuadTree.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Graphs\GraphNodeBase.cpp" />
+    <ClCompile Include="Source\Graphs\RenderGraphNode.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\QuadTree\QuadTree.cpp" />
   </ItemGroup>
