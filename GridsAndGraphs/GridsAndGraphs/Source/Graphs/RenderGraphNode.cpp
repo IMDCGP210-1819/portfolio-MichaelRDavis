@@ -16,3 +16,13 @@ void RenderGraphNode::Draw(sf::RenderWindow& window)
 	m_Point.setFillColor(sf::Color::White);
 	window.draw(m_Point);
 }
+
+void RenderGraphNode::SetPosition(sf::Vector2f newPosition)
+{
+	m_Position = newPosition;
+}
+
+void RenderGraphNode::SetColor(sf::Color newColor)
+{
+	m_pointColor = newColor;
+}
