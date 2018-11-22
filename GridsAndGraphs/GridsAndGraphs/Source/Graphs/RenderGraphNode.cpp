@@ -5,6 +5,13 @@ RenderGraphNode::RenderGraphNode()
 
 }
 
+RenderGraphNode::RenderGraphNode(sf::Vector2f position, sf::Color color)
+	: m_Position(position)
+	, m_pointColor(color)
+{
+
+}
+
 RenderGraphNode::~RenderGraphNode()
 {
 

@@ -7,6 +7,7 @@ class RenderGraphNode : public GraphNodeBase
 {
 public:
 	RenderGraphNode();
+	RenderGraphNode(sf::Vector2f position, sf::Color color);
 	~RenderGraphNode();
 
 	void Draw(sf::RenderWindow& window);
