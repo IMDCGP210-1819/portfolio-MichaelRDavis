@@ -21,7 +21,7 @@ Boid::Boid()
 	m_velocity = Math::ZeroVector;
 	m_fleeDistance = 100.0f;
 	m_deacceleration = 0.5f;
-	m_seekTarget = sf::Vector2f(-150.0f, -150.0f);
+	m_seekTarget = sf::Vector2f(150.0f, 150.0f);
 	
 	Initialize();
 }
@@ -50,7 +50,13 @@ void Boid::Update(float deltaTime)
 	sf::Vector2f force = m_pSteeringBehaviors->Calculate(this);
 	sf::Vector2f accel = force / m_mass;
 	m_velocity += accel * deltaTime;
+	Math::Truncate(m_velocity, m_speed);
 	m_position += m_velocity * deltaTime;
+	if (Math::LengthSquared(m_velocity) > 0.00000001)
+	{
+		m_direction = Math::Normalize(m_velocity);
+		m_side = Math::Perpendicular(m_direction);
+	}
 	setPosition(m_position);
 }
 

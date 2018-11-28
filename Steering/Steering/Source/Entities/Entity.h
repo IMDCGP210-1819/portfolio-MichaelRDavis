@@ -86,6 +86,9 @@ protected:
 	/** Heading of the Entity. */
 	sf::Vector2f m_direction;
 
+	/** Side of vector of the Entity. */
+	sf::Vector2f m_side;
+
 	/** Current position of the Entity. */
 	sf::Vector2f m_position;
 

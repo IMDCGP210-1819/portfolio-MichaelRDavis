@@ -44,6 +44,9 @@ public:
 	sf::Vector2f m_fleeTarget;
 	sf::Vector2f m_arriveTarget;
 
+	/** Pointer to the world object */
+	World* m_world;
+
 protected:
 	/** The steering behavior of the entity. */
 	SteeringBehaviors* m_pSteeringBehaviors;

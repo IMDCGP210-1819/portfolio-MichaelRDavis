@@ -37,6 +37,15 @@ float Math::DotProduct(const sf::Vector2f& vec1, const sf::Vector2f& vec2)
 	return vec1.x * vec2.x + vec1.y * vec2.y;
 }
 
+void Math::Truncate(sf::Vector2f& vec, float max)
+{
+	if (Length(vec) > max)
+	{
+		Normalize(vec);
+		vec *= max;
+	}
+}
+
 sf::Vector2f Math::Normalize(const sf::Vector2f& vec)
 {
 	float length = Length(vec);
@@ -44,4 +53,9 @@ sf::Vector2f Math::Normalize(const sf::Vector2f& vec)
 		return sf::Vector2f(vec.x / length, vec.y / length);
 	else
 		return vec;
+}
+
+sf::Vector2f Math::Perpendicular(const sf::Vector2f& vec)
+{
+	return sf::Vector2f(-vec.y, vec.x);
 }
