@@ -127,12 +127,14 @@
     <ClInclude Include="Source\Graphs\GraphEdge.h" />
     <ClInclude Include="Source\Graphs\GraphNodeBase.h" />
     <ClInclude Include="Source\Graphs\RenderGraphNode.h" />
+    <ClInclude Include="Source\Graphs\SparseGraph.h" />
     <ClInclude Include="Source\QuadTree\QuadTree.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Graphs\GraphEdge.cpp" />
     <ClCompile Include="Source\Graphs\GraphNodeBase.cpp" />
     <ClCompile Include="Source\Graphs\RenderGraphNode.cpp" />
+    <ClCompile Include="Source\Graphs\SparseGraph.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\QuadTree\QuadTree.cpp" />
   </ItemGroup>

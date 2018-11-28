@@ -24,6 +24,11 @@ public:
 	*/
 	void Update(sf::Time& time);
 
+	/** Treat the world has a toroid 
+	*	@param position - Current position;
+	*	@param x - Screen height
+	*	@param y - Screen width
+	*/
 	void Wrap(sf::Vector2f position, int x, int y);
 
 	/** List of all Entities in the world. */

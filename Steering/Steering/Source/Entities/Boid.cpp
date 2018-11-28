@@ -17,7 +17,7 @@ Boid::Boid()
 		m_pSteeringBehaviors->SetBehavior(EBehavior::ESeek);
 	}
 
-	m_speed = 2.0f;
+	m_speed = 0.5f;
 	m_velocity = Math::ZeroVector;
 	m_fleeDistance = 100.0f;
 	m_deacceleration = 0.5f;

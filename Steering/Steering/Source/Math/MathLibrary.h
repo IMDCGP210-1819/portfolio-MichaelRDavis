@@ -9,7 +9,6 @@ public:
 	// Math functions
 	template<class T>
 	static const T& Min(const T& a, const T& b);
-
 	template<class T>
 	static const T& Max(const T& a, const T& b);
 

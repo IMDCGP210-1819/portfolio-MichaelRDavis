@@ -27,6 +27,9 @@
     <ClInclude Include="Source\Graphs\GraphEdge.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Graphs\SparseGraph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\QuadTree\QuadTree.cpp">
@@ -42,6 +45,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\Graphs\GraphEdge.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Graphs\SparseGraph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
