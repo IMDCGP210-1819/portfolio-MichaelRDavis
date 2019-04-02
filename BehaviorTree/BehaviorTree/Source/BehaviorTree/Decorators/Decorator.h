@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../Behavior.h"
+#include "../Task.h"
 
-class Decorator : public Behavior
+class Decorator : public Task
 {
 public:
-	Decorator(Behavior* child);
+	Decorator(Task* child);
 
 protected:
-	Behavior* m_pChild;
+	Task* m_pChild;
 };

@@ -1,16 +1,16 @@
 #pragma once
 
-#include "../Behavior.h"
+#include "../Task.h"
 #include <vector>
 #include <algorithm>
 
-class Composite : public Behavior
+class Composite : public Task
 {
 public:
-	void AddChild(Behavior* child);
-	void RemoveChild(Behavior* child);
+	void AddChild(Task* child);
+	void RemoveChild(Task* child);
 	void ClearChildren();
 
 protected:
-	std::vector<Behavior*> m_children;
+	std::vector<Task*> m_children;
 };

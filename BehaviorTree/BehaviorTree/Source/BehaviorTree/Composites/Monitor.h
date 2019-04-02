@@ -2,11 +2,11 @@
 
 #include "../Composites/Parallel.h"
 
-class Behavior;
+class Task;
 
 class Monitor : public Parallel
 {
 public:
-	void AddCondition(Behavior* condition);
-	void AddAction(Behavior* action);
+	void AddCondition(Task* condition);
+	void AddAction(Task* action);
 };

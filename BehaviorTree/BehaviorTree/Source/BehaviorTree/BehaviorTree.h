@@ -1,6 +1,6 @@
 #pragma once
 
-class Behavior;
+class Task;
 
 /** Base class for a behavior tree */
 class BehaviorTree
@@ -11,5 +11,5 @@ public:
 
 protected:
 	/** The root of the behavior tree */
-	Behavior* m_pRoot;
+	Task* m_pRoot;
 };

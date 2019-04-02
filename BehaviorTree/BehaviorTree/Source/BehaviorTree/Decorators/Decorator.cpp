@@ -1,6 +1,6 @@
 #include "../Decorators/Decorator.h"
 
-Decorator::Decorator(Behavior* child)
+Decorator::Decorator(Task* child)
 	: m_pChild(child)
 {
 

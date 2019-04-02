@@ -9,5 +9,5 @@ public:
 	virtual EStatus Update() override;
 
 protected:
-	std::vector<Behavior*>::iterator m_currentChild;
+	std::vector<Task*>::iterator m_currentChild;
 };

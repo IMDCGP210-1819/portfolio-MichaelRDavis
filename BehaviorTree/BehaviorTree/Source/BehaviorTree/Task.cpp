@@ -1,17 +1,17 @@
 #include "./Behavior.h"
 
-Behavior::Behavior()
+Task::Task()
 	: m_status(EStatus::EInvalid)
 {
 
 }
 
-Behavior::~Behavior()
+Task::~Task()
 {
 
 }
 
-EStatus Behavior::Tick()
+EStatus Task::Tick()
 {
 	if (m_status != EStatus::ERunning)
 		OnInitialize();
@@ -21,27 +21,27 @@ EStatus Behavior::Tick()
 	return m_status;
 }
 
-void Behavior::Reset()
+void Task::Reset()
 {
 	m_status = EStatus::EInvalid;
 }
 
-void Behavior::Abort()
+void Task::Abort()
 {
 
 }
 
-bool Behavior::IsTerminated() const
+bool Task::IsTerminated() const
 {
 	return m_status == EStatus::ESuccess || m_status == EStatus::EFailure;
 }
 
-bool Behavior::IsRunning() const
+bool Task::IsRunning() const
 {
 	return m_status == EStatus::ERunning;
 }
 
-EStatus Behavior::GetStatus() const
+EStatus Task::GetStatus() const
 {
 	return m_status;
 }

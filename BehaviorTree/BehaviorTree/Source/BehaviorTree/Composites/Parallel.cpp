@@ -14,7 +14,7 @@ EStatus Parallel::Update()
 
 	for (auto it : m_children)
 	{
-		Behavior& behavior = *it;
+		Task& behavior = *it;
 		if (!behavior.IsTerminated())
 			behavior.Tick();
 
@@ -48,7 +48,7 @@ void Parallel::OnTerminate(EStatus status)
 {
 	for (auto it : m_children)
 	{
-		Behavior& behavior = *it;
+		Task& behavior = *it;
 		if (behavior.IsRunning())
 			behavior.Abort();
 	}

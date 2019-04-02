@@ -1,11 +1,11 @@
 #include "../Composites/Monitor.h"
 
-void Monitor::AddCondition(Behavior* condition)
+void Monitor::AddCondition(Task* condition)
 {
 
 }
 
-void Monitor::AddAction(Behavior* action)
+void Monitor::AddAction(Task* action)
 {
 
 }
