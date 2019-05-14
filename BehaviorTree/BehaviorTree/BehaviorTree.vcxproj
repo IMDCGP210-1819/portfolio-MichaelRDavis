@@ -127,7 +127,6 @@
     <ClCompile Include="Source\BehaviorTree\Node.cpp" />
     <ClCompile Include="Source\BehaviorTree\Task.cpp" />
     <ClCompile Include="Source\BehaviorTree\Composites\Composite.cpp" />
-    <ClCompile Include="Source\BehaviorTree\Blackboard.cpp" />
     <ClCompile Include="Source\BehaviorTree\Composites\Monitor.cpp" />
     <ClCompile Include="Source\BehaviorTree\Composites\Parallel.cpp" />
     <ClCompile Include="Source\BehaviorTree\Composites\Sequence.cpp" />

@@ -1,6 +1,6 @@
 #include "../Decorators/Repeat.h"
 
-EStatus Repeat::Update()
+EStatus Repeat::OnUpdate()
 {
 	return EStatus::EInvalid;
 }

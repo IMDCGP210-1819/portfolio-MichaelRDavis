@@ -7,7 +7,7 @@ Parallel::Parallel(EPolicy success, EPolicy failure)
 
 }
 
-EStatus Parallel::Update()
+EStatus Parallel::OnUpdate()
 {
 	size_t successCount = 0;
 	size_t failureCount = 0;

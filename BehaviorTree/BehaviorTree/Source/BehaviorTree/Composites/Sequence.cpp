@@ -5,7 +5,7 @@ void Seqeunce::OnInitialize()
 	m_currentChild = m_children.begin();
 }
 
-EStatus Seqeunce::Update()
+EStatus Seqeunce::OnUpdate()
 {
 	while (true)
 	{

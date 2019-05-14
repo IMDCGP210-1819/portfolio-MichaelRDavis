@@ -1,5 +1,6 @@
 #include "BehaviorTree.h"
 #include "Task.h"
+#include "Blackboard.h"
 
 BehaviorTree::BehaviorTree()
 	: m_blackboard(std::make_shared<Blackboard>())

@@ -21,9 +21,6 @@
     <ClCompile Include="Source\BehaviorTree\Composites\Composite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\BehaviorTree\Blackboard.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Source\BehaviorTree\Decorators\Repeat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
