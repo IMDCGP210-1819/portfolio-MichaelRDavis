@@ -122,6 +122,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\BehaviorTree\Node.cpp" />
     <ClCompile Include="Source\BehaviorTree\Task.cpp" />
     <ClCompile Include="Source\BehaviorTree\Composites\Composite.cpp" />
     <ClCompile Include="Source\BehaviorTree\Blackboard.cpp" />
@@ -133,6 +134,7 @@
     <ClCompile Include="Source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\BehaviorTree\Node.h" />
     <ClInclude Include="Source\BehaviorTree\Task.h" />
     <ClInclude Include="Source\BehaviorTree\BehaviorTree.h" />
     <ClInclude Include="Source\BehaviorTree\Blackboard.h" />
