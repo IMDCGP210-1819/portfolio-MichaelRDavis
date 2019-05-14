@@ -45,6 +45,9 @@
     <ClCompile Include="Source\BehaviorTree\Node.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\BehaviorTree\BehaviorTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\BehaviorTree\Decorators\Decorator.h">
