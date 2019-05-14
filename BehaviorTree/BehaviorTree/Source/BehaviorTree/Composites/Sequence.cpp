@@ -2,22 +2,27 @@
 
 void Seqeunce::OnInitialize()
 {
-	m_currentChild = m_children.begin();
+	it = m_children.begin();
 }
 
 EStatus Seqeunce::OnUpdate()
 {
 	while (true)
 	{
-		EStatus status = (*m_currentChild)->Tick();
+		EStatus status = (*it)->Tick();
 		if (status != EStatus::ESuccess)
 		{
 			return status;
 		}
 
-		if (++m_currentChild == m_children.end())
+		if (++it == m_children.end())
 		{
 			return EStatus::ESuccess;
 		}
 	}
+}
+
+void Seqeunce::OnTerminate(EStatus status)
+{
+
 }

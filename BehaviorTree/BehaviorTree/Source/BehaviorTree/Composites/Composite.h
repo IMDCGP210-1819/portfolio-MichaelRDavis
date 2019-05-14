@@ -7,10 +7,14 @@
 class Composite : public Task
 {
 public:
-	void AddChild(Task* child);
-	void RemoveChild(Task* child);
+	Composite();
+	virtual ~Composite();
+
+	void AddChild(std::shared_ptr<Task> child);
+	void RemoveChild(std::shared_ptr<Task> child);
 	void ClearChildren();
 
 protected:
-	std::vector<Task*> m_children;
+	std::vector<std::shared_ptr<Task>> m_children;
+	std::vector<std::shared_ptr<Task>>::iterator it;
 };
