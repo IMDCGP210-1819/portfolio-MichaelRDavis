@@ -1,5 +1,10 @@
 #pragma once
 
+#include "Node.h"
+#include <memory>
+
+class Blackboard;
+
 /** Valid states for tasks. */
 enum class EStatus : uint8_t
 {
@@ -11,11 +16,14 @@ enum class EStatus : uint8_t
 };
 
 /** Base class for all behavior tasks. */
-class Task
+class Task : public Node
 {
 public:
 	/** Default Task Constructor. */
 	Task();
+
+	/** Constructor to initialize a blackboard. */
+	Task(const std::shared_ptr<Blackboard>& blackboard);
 
 	/** Default Task Destructor. */
 	virtual ~Task();
@@ -23,7 +31,7 @@ public:
 	/** Initialize the task. */
 	virtual void OnInitialize() = 0;
 
-	/** Update the task. */
+	/** Update the task, called every frame */
 	virtual EStatus OnUpdate() = 0;
 
 	/** Terminate the task.
@@ -40,6 +48,12 @@ public:
 	/** Abort the the task. */
 	void Abort();
 
+	/** Is the task successful. */
+	bool IsSuccess() const;
+
+	/** Return true if the task failed to run successfully. */
+	bool IsFailure() const;
+
 	/** Is the task terminated? */
 	bool IsTerminated() const;
 
@@ -49,7 +63,10 @@ public:
 	/** Get the current status of the task. */
 	EStatus GetStatus() const;
 
-private:
+protected:
 	/** Current status of the task */
 	EStatus m_status;
+
+	/** Blackboard pointer. */
+	std::shared_ptr<Blackboard> m_blackbaord;
 };
