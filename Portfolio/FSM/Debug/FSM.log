@@ -1,0 +1,2 @@
+﻿  main.cpp
+C:\Users\Micha\Documents\Code\GameProgramming\AI\Portfolio\FSM\Source\AI\CritterFSM.h(9,1): error C2504:  'FSM<Critter>': base class undefined

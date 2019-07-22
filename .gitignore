@@ -4,6 +4,5 @@
 *.opensdf
 *.sdf
 
-**/.vs
-**/Binaries
-**/Intermediates
+**/.vs/**
+**/x64/**
