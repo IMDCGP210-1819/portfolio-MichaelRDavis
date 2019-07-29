@@ -6,6 +6,16 @@ World::World(SDL_Renderer* renderer)
 	: m_renderer(renderer)
 {
 	m_numEntities = 5;
+
+	std::unique_ptr<Entity> entity = std::make_unique<Entity>(this);
+	entity->CreateTexture("Content/boid.png");
+
+	for (int32_t i = 0; i < m_numEntities; i++)
+	{
+		m_entities.push_back(entity.get());
+	}
+
+	LogEntityList();
 }
 
 World::~World()
@@ -15,11 +25,9 @@ World::~World()
 
 void World::Initialize()
 {
-	for (int32_t i = 0; i < m_numEntities; i++)
+	for (auto entity : m_entities)
 	{
-		std::unique_ptr<Entity> entity = std::make_unique<Entity>(this);
 		entity->Initialize();
-		m_entities.push_back(entity.get());
 	}
 }
 

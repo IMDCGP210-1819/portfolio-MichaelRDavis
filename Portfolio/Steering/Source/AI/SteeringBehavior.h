@@ -16,29 +16,43 @@ public:
 
 	void Update(float deltaTime);
 
+	void SetPosition(Vector2f position);
+	void SetVelocity(Vector2f velocity);
 	void SetAcceleration(Vector2f accel);
-	void SetForce(float force);
-	void SetAngle(float angle);
+	void SetOrientation(float orientation);
+	void SetRotation(float rotayion);
+
+	inline Vector2f GetPosition() const 
+	{
+		return m_position;
+	}
+
+	inline Vector2f GetVelocity() const
+	{
+		return m_velocity;
+	}
 
 	inline Vector2f GetAcceleration() const
 	{
 		return m_acceleration;
 	}
 
-	inline float GetForce() const
+	inline float GetOrientation() const
 	{
-		return m_force;
+		return m_orientation;
 	}
 
-	inline float GetAngle() const
+	inline float GetRotation() const
 	{
-		return m_angle;
+		return m_rotation;
 	}
 
 private:
 	std::unique_ptr<Entity> m_owner;
 
+	Vector2f m_position;
+	Vector2f m_velocity;
 	Vector2f m_acceleration;
-	float m_force;
-	float m_angle;
+	float m_orientation;
+	float m_rotation;
 };

@@ -10,6 +10,7 @@ int main()
 
 	while (!app->GetIsShutdown())
 	{
+		app->HandleEvents();
 		float deltaTime = SDL_GetTicks() - tickCount / 1000.0f;
 		tickCount = SDL_GetTicks();
 		app->Update(deltaTime);

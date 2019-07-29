@@ -37,7 +37,7 @@ void GameApp::Init()
 	}
 
 	uint32_t windowFlags = SDL_WINDOW_ALLOW_HIGHDPI;
-	m_pWindow = SDL_CreateWindow("Interactive Agents", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_windowWidth, m_windowHeight, windowFlags);
+	m_pWindow = SDL_CreateWindow("Steering", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_windowWidth, m_windowHeight, windowFlags);
 	if (m_pWindow == nullptr)
 	{
 		SDL_Log("Could not create window: %s", SDL_GetError());
@@ -67,6 +67,11 @@ void GameApp::Shutdown()
 }
 
 void GameApp::Update(float deltaTime)
+{
+	m_pWorld->Update(deltaTime);
+}
+
+void GameApp::HandleEvents()
 {
 	SDL_Event event;
 	while (SDL_PollEvent(&event))

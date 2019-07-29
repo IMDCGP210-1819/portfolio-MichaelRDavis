@@ -1,6 +1,7 @@
 #pragma once
 
 #include <list>
+#include <iostream>
 #include <SDL.h>
 
 class Entity;
@@ -14,6 +15,17 @@ public:
 	void Initialize();
 	void Update(float deltaTime);
 	void Draw();
+
+#ifdef _DEBUG
+	void LogEntityList()
+	{
+		for (auto entity : m_entities)
+		{
+			const std::type_info& entityType = typeid(entity);
+			std::cout << entityType.name() << std::endl;
+		}
+	}
+#endif
 
 	inline SDL_Renderer* GetRenderer() const
 	{

@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Source\BreadthFirstSearch.h" />
     <ClInclude Include="Source\Graph.h" />
   </ItemGroup>
   <ItemGroup>

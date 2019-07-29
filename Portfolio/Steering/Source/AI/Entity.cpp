@@ -23,13 +23,12 @@ Entity::~Entity()
 
 void Entity::Initialize()
 {
-	SDL_Log("Init Entity");
-	//CreateTexture("Content/boid.png");
+
 }
 
 void Entity::Update(float deltaTime)
 {
-	SDL_Log("Update Entity");
+
 }
 
 void Entity::Draw()
@@ -52,8 +51,6 @@ void Entity::Draw()
 			m_rotation,
 			nullptr,
 			SDL_FLIP_NONE);
-
-		SDL_Log("Draw Entity");
 	}
 }
 

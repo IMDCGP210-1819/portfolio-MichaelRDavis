@@ -8,10 +8,9 @@ public:
 	Random() = default;
 	~Random() = default;
 
-	template<typename T>
-	static T GetRange(T min, T max)
+	static float GetRange(float min, float max)
 	{
-		std::uniform_real_distribution<T> dist(min, max);
+		std::uniform_real_distribution<float> dist(min, max);
 		return dist(m_mt);
 	}
 

@@ -17,6 +17,8 @@ public:
 
 	void Update(float deltaTime);
 
+	void HandleEvents();
+
 	void Clear();
 	void SwapBuffers();
 	void Draw();
