@@ -11,7 +11,7 @@ class World;
 class Entity
 {
 public:
-	Entity(World* world);
+	Entity(SDL_Renderer* renderer);
 	~Entity();
 
 	virtual void Initialize();
@@ -20,9 +20,12 @@ public:
 
 	void CreateTexture(const std::string& filePath);
 
+	inline Vector2f GetVelcoity() const { return m_velocity; }
+	inline Vector2f GetPosition() const { return m_position; }
+
 protected:
 	SDL_Texture* m_texture;
-	World* m_world;
+	SDL_Renderer* m_renderer;
 	std::unique_ptr<SteeringBehavior> m_behavior;
 
 	Vector2f m_velocity;

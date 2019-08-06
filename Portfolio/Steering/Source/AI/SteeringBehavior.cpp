@@ -49,3 +49,51 @@ void SteeringBehavior::SetRotation(float rotation)
 {
 	m_rotation = rotation;
 }
+
+float SteeringBehavior::CalculateOrientation(float currentOrientation, Vector2f currentVelocity)
+{
+	if (currentVelocity.length() > 0)
+	{
+		return atan2(-currentVelocity.x, -currentVelocity.y);
+	}
+	else
+	{
+		return currentOrientation;
+	}
+}
+
+Vector2f SteeringBehavior::Seek(Entity* target)
+{
+	Vector2f result;
+	result = target->GetPosition() - m_owner->GetPosition();
+	result.normalize();
+	result *= MAX_SPEED;
+
+	m_orientation = CalculateOrientation(m_orientation, result);
+
+	return result;
+}
+
+Vector2f SteeringBehavior::Flee(Entity* target)
+{
+	Vector2f result;
+	result = m_owner->GetPosition() - target->GetPosition();
+	result.normalize();
+	result *= MAX_SPEED;
+
+	m_orientation = CalculateOrientation(m_orientation, result);
+
+	return result;
+}
+
+Vector2f SteeringBehavior::Arrive(Entity* target)
+{
+	Vector2f result;
+	float radius;
+	float timeToTarget = 0.25f;
+
+	result = target->GetPosition() - m_owner->GetPosition();
+
+
+	return result;
+}

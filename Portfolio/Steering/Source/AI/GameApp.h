@@ -3,8 +3,9 @@
 #include <SDL.h>
 #undef main
 #include <memory>
-
-class World;
+#include <string>
+#include "Scenes/IScene.h"
+#include "Scenes/SceneMenu.h"
 
 class GameApp
 {
@@ -15,13 +16,19 @@ public:
 	void Init();
 	void Shutdown();
 
-	void Update(float deltaTime);
+	void Update();
 
 	void HandleEvents();
 
 	void Clear();
 	void SwapBuffers();
 	void Draw();
+
+	template<typename T>
+	inline void AddMenuScene(const std::string& sceneName)
+	{
+		m_menu->AddScene<T>(sceneName);
+	}
 
 	inline SDL_Window* GetWindow() const
 	{
@@ -41,9 +48,10 @@ public:
 private:
 	SDL_Window* m_pWindow;
 	SDL_Renderer* m_pRenderer;
+	IScene* m_scene;
+	SceneMenu* m_menu;
 	int32_t m_windowWidth;
 	int32_t m_windowHeight;
 	bool m_isShutdown;
-
-	std::unique_ptr<World> m_pWorld;
+	bool m_isMenuActive;
 };

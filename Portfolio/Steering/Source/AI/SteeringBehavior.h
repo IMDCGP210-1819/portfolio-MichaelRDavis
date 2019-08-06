@@ -20,7 +20,13 @@ public:
 	void SetVelocity(Vector2f velocity);
 	void SetAcceleration(Vector2f accel);
 	void SetOrientation(float orientation);
-	void SetRotation(float rotayion);
+	void SetRotation(float rotation);
+
+	float CalculateOrientation(float currentOrientation, Vector2f currentVelocity);
+
+	Vector2f Seek(Entity* target);
+	Vector2f Flee(Entity* target);
+	Vector2f Arrive(Entity* target);
 
 	inline Vector2f GetPosition() const 
 	{

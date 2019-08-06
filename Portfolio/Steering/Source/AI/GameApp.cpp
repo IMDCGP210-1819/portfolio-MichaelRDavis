@@ -1,10 +1,13 @@
 #include "GameApp.h"
-#include "World.h"
+#include <imgui.h>
+#include <imgui_sdl.h>
 
 GameApp::GameApp()
 {
 	m_pWindow = nullptr;
 	m_pRenderer = nullptr;
+	m_scene = nullptr;
+	m_menu = nullptr;
 	m_windowWidth = 0;
 	m_windowHeight = 0;
 	m_isShutdown = false;
@@ -52,23 +55,55 @@ void GameApp::Init()
 		SDL_Log("Could not create renderer: %s", SDL_GetError());
 	}
 
-	m_pWorld = std::make_unique<World>(m_pRenderer);
-	if (m_pWorld)
-	{
-		m_pWorld->Initialize();
-	}
+	ImGui::CreateContext();
+	ImGuiSDL::Initialize(m_pRenderer, m_windowWidth, m_windowHeight);
 }
 
 void GameApp::Shutdown()
 {
+	delete m_scene;
+	if (m_scene != m_menu)
+	{
+		delete m_menu;
+	}
+
+	ImGuiSDL::Deinitialize();
 	SDL_DestroyRenderer(m_pRenderer);
 	SDL_DestroyWindow(m_pWindow);
+	ImGui::DestroyContext();
 	SDL_Quit();
 }
 
-void GameApp::Update(float deltaTime)
+void GameApp::Update()
 {
-	m_pWorld->Update(deltaTime);
+	float deltaTime = (float)SDL_GetTicks() / 1000;
+	HandleEvents();
+
+	Clear();
+
+	ImGui::NewFrame();
+
+	if (m_scene)
+	{
+		m_scene->OnInitialize(m_pRenderer);
+		m_scene->OnUpdate(deltaTime);
+		m_scene->OnRender();
+
+		ImGui::Begin("Scenes", &m_isMenuActive, ImGuiWindowFlags_MenuBar);
+		if (m_scene != m_menu && ImGui::Button("Back"))
+		{
+			delete m_scene;
+			m_scene = m_menu;
+		}
+
+		m_scene->OnGUIRender();
+		ImGui::End();
+	}
+
+	ImGui::Render();
+	ImGuiSDL::Render(ImGui::GetDrawData());
+
+	SwapBuffers();
 }
 
 void GameApp::HandleEvents()
@@ -99,6 +134,5 @@ void GameApp::SwapBuffers()
 void GameApp::Draw()
 {
 	Clear();
-	m_pWorld->Draw();
 	SwapBuffers();
 }

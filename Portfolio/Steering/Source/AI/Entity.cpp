@@ -1,10 +1,9 @@
 #include "Entity.h"
 #include "SteeringBehavior.h"
-#include "World.h"
 #include <SDL_image.h>
 
-Entity::Entity(World* world)
-	: m_world(world)
+Entity::Entity(SDL_Renderer* renderer)
+	: m_renderer(renderer)
 {
 	m_texture = nullptr;
 	m_velocity = Vector2f(0.0f, 0.0f);
@@ -18,7 +17,6 @@ Entity::Entity(World* world)
 Entity::~Entity()
 {
 	m_texture = nullptr;
-	m_world = nullptr;
 }
 
 void Entity::Initialize()
@@ -44,7 +42,7 @@ void Entity::Draw()
 		SDL_QueryTexture(m_texture, nullptr, nullptr, &rect.w, &rect.h);
 
 		SDL_RenderCopyEx(
-			m_world->GetRenderer(),
+			m_renderer,
 			m_texture,
 			nullptr,
 			&rect,
@@ -62,7 +60,7 @@ void Entity::CreateTexture(const std::string& filePath)
 		std::cout << "Unable to load a texture file " << filePath.c_str() << std::endl;
 	}
 
-	m_texture = SDL_CreateTextureFromSurface(m_world->GetRenderer(), surface);
+	m_texture = SDL_CreateTextureFromSurface(m_renderer, surface);
 	SDL_FreeSurface(surface);
 	if (m_texture == nullptr)
 	{
