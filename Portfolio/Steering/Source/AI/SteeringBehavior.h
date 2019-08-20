@@ -27,6 +27,7 @@ public:
 	Vector2f Seek(Entity* target);
 	Vector2f Flee(Entity* target);
 	Vector2f Arrive(Entity* target);
+	Vector2f Wander(Entity* target);
 
 	inline Vector2f GetPosition() const 
 	{

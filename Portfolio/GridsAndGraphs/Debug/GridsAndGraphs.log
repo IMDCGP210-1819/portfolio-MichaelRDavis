@@ -1,2 +1,11 @@
-﻿  HexagonalGrid.cpp
-  GridsAndGraphs.vcxproj -> C:\Users\Micha\Documents\Code\GameProgramming\AI\Portfolio\GridsAndGraphs\Debug\GridsAndGraphs.exe
+﻿  Graph.cpp
+C:\Users\Micha\Documents\Repos\portfolio-MichaelRDavis\Portfolio\GridsAndGraphs\Source\Graph.h(11,7): error C2143:  syntax error: missing ';' before '&'
+C:\Users\Micha\Documents\Repos\portfolio-MichaelRDavis\Portfolio\GridsAndGraphs\Source\Graph.h(14): message :  see reference to class template instantiation 'Node<T>' being compiled
+C:\Users\Micha\Documents\Repos\portfolio-MichaelRDavis\Portfolio\GridsAndGraphs\Source\Graph.h(11,1): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int
+  QuadTree.cpp
+C:\Users\Micha\Documents\Repos\portfolio-MichaelRDavis\Portfolio\GridsAndGraphs\Source\Graph.h(11,1): error C2238:  unexpected token(s) preceding ';'
+C:\Users\Micha\Documents\Repos\portfolio-MichaelRDavis\Portfolio\GridsAndGraphs\Source\QuadTree.h(78,1): error C2955:  'Node': use of class template requires template argument list
+C:\Users\Micha\Documents\Repos\portfolio-MichaelRDavis\Portfolio\GridsAndGraphs\Source\QuadTree.h(27): message :  see declaration of 'Node'
+C:\Users\Micha\Documents\Repos\portfolio-MichaelRDavis\Portfolio\GridsAndGraphs\Source\QuadTree.h(93): message :  see reference to class template instantiation 'QuadTree<T>' being compiled
+  Generating Code...
+C:\Users\Micha\Documents\Repos\portfolio-MichaelRDavis\Portfolio\GridsAndGraphs\Source\QuadTree.h(74,4): error C2760:  syntax error: unexpected token '}', expected ';'

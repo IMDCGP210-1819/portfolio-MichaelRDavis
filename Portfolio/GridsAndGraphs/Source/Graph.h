@@ -3,28 +3,62 @@
 #include <cstdint>
 #include <vector>
 
-struct Link
+template<typename T>
+class Node
 {
-	int32_t sourceIndex;
-	int32_t destinationIndex;
-};
-
-class Graph
-{
-public:
-	Graph(std::vector<Link> const& links, int32_t num);
-	~Graph() = default;
-
-	void DrawGraph(Graph const& graph, int32_t num);
-
-	void SetIsDirected(bool directed);
-
-	inline bool GetIsDirected() const
+	Node(T inData, Graph& graph)
 	{
-		return m_isDirected;
+		m_data = std::move(inData);
+		m_graph = graph;
 	}
 
 private:
-	std::vector<std::vector<int32_t>> m_adjacencyList;
-	bool m_isDirected;
+	T m_data;
+	Graph& m_graph;
+	std::array<Node, 2> m_nodes;
+	std::vector<Link*> m_links;
+};
+
+template<typename T>
+class Link
+{
+public:
+	Link(Node<T>* to, Node<T>* from)
+	{
+		m_nodes[0] = to;
+		m_nodes[1] = from;
+	}
+
+private:
+	std::array<Node, 2> m_nodes;
+	std::vector<Link*> m_links;
+};
+
+template<typename T>
+class Graph
+{
+public:
+	Graph()
+	{
+
+	}
+
+	~Graph()
+	{
+
+	}
+
+	Node<T>* AddNode(T inData)
+	{
+		return new Node<T>(inData, *this);
+	}
+
+	Link<T>* AddLink(T inData, Node<T>* to, Node<T>* from)
+	{
+
+	}
+
+private:
+	std::array<Node<T>*, 2> m_nodes;
+	std::array<Node<T>*, 2> m_links;
 };

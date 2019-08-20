@@ -21,9 +21,18 @@
     <ClInclude Include="Source\BreadthFirstSearch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\AStarSearch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Graph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\AStarSearch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BreadthFirstSearch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

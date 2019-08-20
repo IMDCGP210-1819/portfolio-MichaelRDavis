@@ -123,10 +123,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Source\AStarSearch.h" />
     <ClInclude Include="Source\BreadthFirstSearch.h" />
     <ClInclude Include="Source\Graph.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\AStarSearch.cpp" />
+    <ClCompile Include="Source\BreadthFirstSearch.cpp" />
     <ClCompile Include="Source\Graph.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

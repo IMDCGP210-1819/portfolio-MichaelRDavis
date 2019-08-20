@@ -89,11 +89,32 @@ Vector2f SteeringBehavior::Flee(Entity* target)
 Vector2f SteeringBehavior::Arrive(Entity* target)
 {
 	Vector2f result;
-	float radius;
+	float radius = 2.0f;
 	float timeToTarget = 0.25f;
 
 	result = target->GetPosition() - m_owner->GetPosition();
+	if (result.length() < radius)
+	{
+		return Vector2f(0.0f, 0.0f);
+	}
 
+	result /= timeToTarget;
+	if (result.length() > MAX_SPEED)
+	{
+		result.normalize();
+		result *= MAX_SPEED;
+	}
+
+	m_orientation = CalculateOrientation(m_orientation, result);
+
+	return result;
+}
+
+Vector2f SteeringBehavior::Wander(Entity* target)
+{
+	Vector2f result;
+
+	//result = MAX_SPEED * m_orientation;
 
 	return result;
 }

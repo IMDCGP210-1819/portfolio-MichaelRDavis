@@ -2,36 +2,110 @@
 
 #include <cstdint>
 
-struct Point
+template<typename T>
+class Vector
 {
-	Point(int32_t inX, int32_t inY)
+public:
+	Vector(T inX, T inY)
 		: x(inX)
 		, y(inY)
 	{
 
 	}
 
-	int32_t x;
-	int32_t y;
+	inline T GetPointX() const { return x; }
+	inline T GetPointY() const { return y; }
+
+private:
+	T x;
+	T y;
 };
 
-struct Node
+
+template<typename T>
+class Node
 {
-	Node(Node* inParent)
-		: parent(inParent)
+public:
+	Node(Vector<int32_t> inPoint, T inData)
+		: point(inPoint)
+		, data(inData)
 	{
 
 	}
 
-	Node* parent;
-	Node* children[4] = { nullptr, nullptr, nullptr, nullptr };
+	inline Vector<int32_t> GetPoint() const { return point; }
+	inline T GetData() const { return data; }
+
+private:
+	Vector<int32_t> point;
+	T data;
 };
 
+template<typename T>
 class QuadTree
 {
 public:
+	QuadTree()
+	{
+		m_topLeft = Vector<int32_t>(0, 0);
+		m_bottomRight = Vector<int32_t>(0, 0);
+		m_root = nullptr;
+		m_children = nullptr;
+	}
 
+	QuadTree(Point top, Point bottom)
+	{
+		m_topLeft = top;
+		m_bottomRight = bottom;
+		m_root = nullptr;
+		m_children = nullptr;
+	}
+
+	void Insert(Node<T>* newNode)
+	{
+		if (m_root == nullptr)
+		{
+			return;
+		}
+
+		if (!InBoundary(newNode->GetPoint()))
+		{
+			return;
+		}
+
+		if (abs(m_topLeft.GetPointX() - m_bottomRight.GetPointX() <= 1 &&
+			abs(m_topLeft.GetPointY() - m_bottomRight.GetPointY() <= 1)))
+		{
+			if (m_root == nullptr)
+			{
+				m_root = newNode;
+			}
+
+			return;
+		}
+
+		if (m_topLeft.GetPointX() + m_bottomRight.GetPointX() / 2 >= newNode->GetPoint().GetPointX())
+		{
+			if (m_children[0] == nullptr)
+			{
+				m_children[0] = new QuadTree<T>(Point(m_topLeft.GetPointX(), m_bottomRight.GetPointY()), );
+			}
+		}
+	}
+
+	Node* Search(Vector<int32_t> point)
+	{
+
+	}
+
+	bool InBoundary(Vector<int32_t> point)
+	{
+
+	}
 
 private:
-	Node* m_root;
+	Vector<int32_t> m_topLeft;
+	Vector<int32_t> m_bottomRight;
+	Node<T>* m_root;
+	QuadTree<T>* m_children[4];
 };

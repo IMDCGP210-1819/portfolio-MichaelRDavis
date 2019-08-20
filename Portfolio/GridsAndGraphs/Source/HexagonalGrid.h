@@ -16,11 +16,6 @@ class HexagonNode
 
 	}
 
-	HexagonNode operator+(HexagonNode a)
-	{
-		return HexagonNode(q + a.q, r + a.r, s + a.s);
-	}
-
 	const T q;
 	const T r;
 	const T s;
