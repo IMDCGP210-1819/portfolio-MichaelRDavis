@@ -1,6 +1,7 @@
 #pragma once
 
-template<typename T>
+class NavNode;
+
 class NavLink
 {
 public:
@@ -22,6 +23,9 @@ public:
 			return m_to;
 		}
 	}
+
+	inline NavNode* GetToNode() const { return m_to; }
+	inline NavNode* GetFromNode() const { return m_from; }
 
 private:
 	NavNode* m_to;

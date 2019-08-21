@@ -1,5 +1,6 @@
 #include "BreadthFirstSearch.h"
 #include "NavigationGraph/NavPath.h"
+#include "NavigationGraph/NavNode.h"
 
 BreadthFirstSearch::BreadthFirstSearch()
 {
@@ -30,10 +31,19 @@ NavPath* BreadthFirstSearch::Search(NavNode* start, NavNode* end)
 			NavNode* pathNode = currentNode;
 			while (currentNode)
 			{
-				
+				path->AddNode(pathNode);
 			}
 
 			return path;
+		}
+
+		std::vector<NavNode*> adjacentNodes;
+		currentNode->GetNearestNodes(adjacentNodes);
+		for (auto it : adjacentNodes)
+		{
+			NavNode* parentNode = m_map[it];
+			m_map[it] = currentNode;
+			m_consideredNodes.emplace(it);
 		}
 	}
 

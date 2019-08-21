@@ -74,7 +74,9 @@
     <ClInclude Include="Source\AStarSearch.h" />
     <ClInclude Include="Source\BreadthFirstSearch.h" />
     <ClInclude Include="Source\DijkstraSearch.h" />
+    <ClInclude Include="Source\GreedyBreadthFirstSerach.h" />
     <ClInclude Include="Source\NavigationGraph\DijkstraNode.h" />
+    <ClInclude Include="Source\NavigationGraph\GBFSNode.h" />
     <ClInclude Include="Source\NavigationGraph\NavGraph.h" />
     <ClInclude Include="Source\NavigationGraph\NavLink.h" />
     <ClInclude Include="Source\NavigationGraph\NavNode.h" />
@@ -85,7 +87,9 @@
     <ClCompile Include="Source\AStarSearch.cpp" />
     <ClCompile Include="Source\BreadthFirstSearch.cpp" />
     <ClCompile Include="Source\DijkstraSearch.cpp" />
+    <ClCompile Include="Source\GreedyBreadthFirstSearch.cpp" />
     <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\NavigationGraph\GBFSNode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ThirdPartySDKs\Eigen\Eigen" />

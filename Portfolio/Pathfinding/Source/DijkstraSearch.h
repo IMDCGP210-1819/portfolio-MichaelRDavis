@@ -3,7 +3,8 @@
 #include <queue>
 
 class NavNode;
-class NavNodePath;
+class NavPath;
+class DijkstraNode;
 
 class DijkstraSearch
 {
@@ -11,6 +12,8 @@ public:
 	DijkstraSearch();
 	~DijkstraSearch();
 
+	NavPath* Search(NavNode* startNode, NavNode* goalNode);
+
 private:
-	std::priority_queue<NavNode, NavNodePath> m_queue;
+	std::priority_queue<NavNode, DijkstraNode> m_queue;
 };
