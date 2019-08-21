@@ -89,7 +89,6 @@
     <ClCompile Include="Source\DijkstraSearch.cpp" />
     <ClCompile Include="Source\GreedyBreadthFirstSearch.cpp" />
     <ClCompile Include="Source\main.cpp" />
-    <ClCompile Include="Source\NavigationGraph\GBFSNode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ThirdPartySDKs\Eigen\Eigen" />
