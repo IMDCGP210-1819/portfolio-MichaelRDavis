@@ -1,5 +1,6 @@
 #pragma once
 
+#include <map>
 #include <queue>
 
 class NavNode;
@@ -15,5 +16,6 @@ public:
 	NavPath* Search(NavNode* startNode, NavNode* goalNode);
 
 private:
-	std::priority_queue<NavNode, DijkstraNode> m_queue;
+	std::priority_queue<NavNode*> m_queue;
+	std::map<NavNode*, DijkstraNode*> m_map;
 };

@@ -26,11 +26,15 @@ public:
 		}
 	}
 
-	NavLink* GetLink(NavNode node)
+	NavLink* GetLink(NavNode* node)
 	{
 		for (auto it = m_links.begin(); it != m_links.end(); ++it)
 		{
-
+			NavLink* link = *it;
+			if (link->GetNearestNode(this) == node)
+			{
+				return link;
+			}
 		}
 	}
 

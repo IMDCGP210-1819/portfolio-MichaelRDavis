@@ -12,6 +12,11 @@ public:
 		m_isClosed = false;
 	}
 
+	void ComputeHeuristic()
+	{
+		
+	}
+
 	inline void SetNavNode(NavNode* newParentNode) { m_parentNode = newParentNode; }
 	inline void SetIsClosed(bool closed) { m_isClosed = closed; }
 
