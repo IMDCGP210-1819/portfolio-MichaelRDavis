@@ -88,7 +88,17 @@ public:
 		{
 			if (m_children[0] == nullptr)
 			{
-				m_children[0] = new QuadTree<T>(Point(m_topLeft.GetPointX(), m_bottomRight.GetPointY()), );
+				m_children[0] = new QuadTree<T>(Point(m_topLeft.GetPointX(),m_bottomRight.GetPointY()), 
+					Point((m_topLeft.GetPointX() + m_bottomRight.GetPointX()) / 2,
+						(m_topLeft.GetPointY() + m_bottomRight.GetPointY()) / 2));
+				m_children[0] = newNode;
+			}
+		}
+		else
+		{
+			if (m_children[1] == nullptr)
+			{
+
 			}
 		}
 	}
