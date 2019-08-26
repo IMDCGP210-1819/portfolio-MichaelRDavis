@@ -1,7 +1,6 @@
 #include <memory>
 #include <iostream>
 #include "AI/GameApp.h"
-#include "Scenes/SceneSeek.h"
 
 int main()
 {
@@ -9,8 +8,6 @@ int main()
 	{
 		std::unique_ptr<GameApp> app = std::make_unique<GameApp>();
 		app->Init();
-
-		app->AddMenuScene<SceneSeek>("Seek");
 
 		while (!app->GetIsShutdown())
 		{

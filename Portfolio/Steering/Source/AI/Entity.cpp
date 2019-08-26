@@ -6,12 +6,14 @@ Entity::Entity(SDL_Renderer* renderer)
 	: m_renderer(renderer)
 {
 	m_texture = nullptr;
+	m_behavior = std::make_unique<SteeringBehavior>(this);
 	m_velocity = Vector2f(0.0f, 0.0f);
 	m_texWidth = 0;
 	m_texHeight = 0;
 	m_drawOrder = 0;
 	m_scale = 1.0f;
 	m_rotation = 0.0f;
+	CreateTexture("Content/boid.png");
 }
 
 Entity::~Entity()
@@ -26,7 +28,7 @@ void Entity::Initialize()
 
 void Entity::Update(float deltaTime)
 {
-
+	m_behavior->Update(deltaTime);
 }
 
 void Entity::Draw()

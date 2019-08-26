@@ -6,7 +6,7 @@
 
 class Entity;
 
-float constexpr MAX_SPEED{ 0.1f };
+float constexpr MAX_SPEED{ 1.5f };
 
 class SteeringBehavior
 {
@@ -24,10 +24,10 @@ public:
 
 	float CalculateOrientation(float currentOrientation, Vector2f currentVelocity);
 
-	Vector2f Seek(Entity* target);
-	Vector2f Flee(Entity* target);
-	Vector2f Arrive(Entity* target);
-	Vector2f Wander(Entity* target);
+	Vector2f Seek(Vector2f target);
+	Vector2f Flee(Vector2f target);
+	Vector2f Arrive(Vector2f target);
+	Vector2f Wander(Vector2f target);
 
 	inline Vector2f GetPosition() const 
 	{

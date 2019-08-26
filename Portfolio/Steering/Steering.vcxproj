@@ -82,10 +82,8 @@ copy $(SolutionDir)ThirdPartySDKs\SDL2-2.0.9\lib\x64\zlib1.dll $(SolutionDir)x64
     <ClCompile Include="Source\AI\Entity.cpp" />
     <ClCompile Include="Source\AI\GameApp.cpp" />
     <ClCompile Include="Source\AI\SteeringBehavior.cpp" />
+    <ClCompile Include="Source\AI\World.cpp" />
     <ClCompile Include="Source\main.cpp" />
-    <ClCompile Include="Source\Scenes\SceneFlee.cpp" />
-    <ClCompile Include="Source\Scenes\SceneMenu.cpp" />
-    <ClCompile Include="Source\Scenes\SceneSeek.cpp" />
     <ClCompile Include="ThirdPartySDKs\imgui\imgui.cpp" />
     <ClCompile Include="ThirdPartySDKs\imgui\imgui_demo.cpp" />
     <ClCompile Include="ThirdPartySDKs\imgui\imgui_draw.cpp" />
@@ -97,10 +95,7 @@ copy $(SolutionDir)ThirdPartySDKs\SDL2-2.0.9\lib\x64\zlib1.dll $(SolutionDir)x64
     <ClInclude Include="Source\AI\GameApp.h" />
     <ClInclude Include="Source\AI\Random.h" />
     <ClInclude Include="Source\AI\SteeringBehavior.h" />
-    <ClInclude Include="Source\Scenes\IScene.h" />
-    <ClInclude Include="Source\Scenes\SceneFlee.h" />
-    <ClInclude Include="Source\Scenes\SceneMenu.h" />
-    <ClInclude Include="Source\Scenes\SceneSeek.h" />
+    <ClInclude Include="Source\AI\World.h" />
     <ClInclude Include="ThirdPartySDKs\imgui\imconfig.h" />
     <ClInclude Include="ThirdPartySDKs\imgui\imgui.h" />
     <ClInclude Include="ThirdPartySDKs\imgui\imgui_impl_sdl.h" />

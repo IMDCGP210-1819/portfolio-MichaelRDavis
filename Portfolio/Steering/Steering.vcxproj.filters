@@ -42,13 +42,7 @@
     <ClCompile Include="ThirdPartySDKs\imgui_sdl-master\imgui_sdl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Scenes\SceneMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scenes\SceneFlee.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Scenes\SceneSeek.cpp">
+    <ClCompile Include="Source\AI\World.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -89,16 +83,7 @@
     <ClInclude Include="ThirdPartySDKs\imgui_sdl-master\imgui_sdl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Scenes\IScene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Scenes\SceneMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Scenes\SceneSeek.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Scenes\SceneFlee.h">
+    <ClInclude Include="Source\AI\World.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

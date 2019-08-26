@@ -62,10 +62,10 @@ float SteeringBehavior::CalculateOrientation(float currentOrientation, Vector2f 
 	}
 }
 
-Vector2f SteeringBehavior::Seek(Entity* target)
+Vector2f SteeringBehavior::Seek(Vector2f target)
 {
 	Vector2f result;
-	result = target->GetPosition() - m_owner->GetPosition();
+	result = target - m_owner->GetPosition();
 	result.normalize();
 	result *= MAX_SPEED;
 
@@ -74,10 +74,10 @@ Vector2f SteeringBehavior::Seek(Entity* target)
 	return result;
 }
 
-Vector2f SteeringBehavior::Flee(Entity* target)
+Vector2f SteeringBehavior::Flee(Vector2f target)
 {
 	Vector2f result;
-	result = m_owner->GetPosition() - target->GetPosition();
+	result = m_owner->GetPosition() - target;
 	result.normalize();
 	result *= MAX_SPEED;
 
@@ -86,13 +86,13 @@ Vector2f SteeringBehavior::Flee(Entity* target)
 	return result;
 }
 
-Vector2f SteeringBehavior::Arrive(Entity* target)
+Vector2f SteeringBehavior::Arrive(Vector2f target)
 {
 	Vector2f result;
 	float radius = 2.0f;
 	float timeToTarget = 0.25f;
 
-	result = target->GetPosition() - m_owner->GetPosition();
+	result = target - m_owner->GetPosition();
 	if (result.length() < radius)
 	{
 		return Vector2f(0.0f, 0.0f);
@@ -110,7 +110,7 @@ Vector2f SteeringBehavior::Arrive(Entity* target)
 	return result;
 }
 
-Vector2f SteeringBehavior::Wander(Entity* target)
+Vector2f SteeringBehavior::Wander(Vector2f target)
 {
 	Vector2f result;
 

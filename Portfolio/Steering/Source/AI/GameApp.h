@@ -4,8 +4,8 @@
 #undef main
 #include <memory>
 #include <string>
-#include "Scenes/IScene.h"
-#include "Scenes/SceneMenu.h"
+
+class World;
 
 class GameApp
 {
@@ -23,12 +23,6 @@ public:
 	void Clear();
 	void SwapBuffers();
 	void Draw();
-
-	template<typename T>
-	inline void AddMenuScene(const std::string& sceneName)
-	{
-		m_menu->AddScene<T>(sceneName);
-	}
 
 	inline SDL_Window* GetWindow() const
 	{
@@ -48,10 +42,8 @@ public:
 private:
 	SDL_Window* m_pWindow;
 	SDL_Renderer* m_pRenderer;
-	IScene* m_scene;
-	SceneMenu* m_menu;
+	std::unique_ptr<World> m_world;
 	int32_t m_windowWidth;
 	int32_t m_windowHeight;
 	bool m_isShutdown;
-	bool m_isMenuActive;
 };
